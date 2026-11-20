@@ -1,0 +1,18 @@
+.env
+.venv/
+__pycache__/
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.hypothesis/
+.cache/
+dist/
+build/
+# runtime state written by the CLI, demo and benchmarks
+.durable-agent/
+*.db
+*.db-wal
+*.db-shm
+*.log
+benchmarks/.work/

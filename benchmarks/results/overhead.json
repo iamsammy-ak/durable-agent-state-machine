@@ -1,0 +1,108 @@
+{
+ "command": "PYTHONPATH=src python benchmarks/overhead.py",
+ "environment": {
+  "python": "3.13.2",
+  "sqlite": "3.45.3",
+  "os": "Windows 11",
+  "cpu_count": 12
+ },
+ "steps": 300,
+ "repeats": 7,
+ "in_memory_ms_per_step": 0.0248,
+ "per_step": [
+  {
+   "synchronous": "NORMAL",
+   "checkpoint_every": 1,
+   "label": "synchronous=NORMAL, checkpoint every 1",
+   "ms_per_step": 1.971,
+   "min_ms_per_step": 1.194,
+   "overhead_ms": 1.946,
+   "samples_ms": [
+    1.199,
+    1.266,
+    1.194,
+    1.971,
+    9.801,
+    5.488,
+    4.845
+   ]
+  },
+  {
+   "synchronous": "NORMAL",
+   "checkpoint_every": 10,
+   "label": "synchronous=NORMAL, checkpoint every 10",
+   "ms_per_step": 1.282,
+   "min_ms_per_step": 0.885,
+   "overhead_ms": 1.258,
+   "samples_ms": [
+    0.956,
+    1.006,
+    0.885,
+    1.282,
+    5.953,
+    4.621,
+    5.222
+   ]
+  },
+  {
+   "synchronous": "NORMAL",
+   "checkpoint_every": 0,
+   "label": "synchronous=NORMAL, no checkpoints",
+   "ms_per_step": 1.563,
+   "min_ms_per_step": 0.869,
+   "overhead_ms": 1.538,
+   "samples_ms": [
+    0.869,
+    0.947,
+    0.878,
+    1.563,
+    2.664,
+    4.852,
+    3.275
+   ]
+  },
+  {
+   "synchronous": "FULL",
+   "checkpoint_every": 1,
+   "label": "synchronous=FULL, checkpoint every 1",
+   "ms_per_step": 3.323,
+   "min_ms_per_step": 2.642,
+   "overhead_ms": 3.298,
+   "samples_ms": [
+    2.642,
+    2.836,
+    2.664,
+    3.323,
+    6.579,
+    6.658,
+    4.624
+   ]
+  }
+ ],
+ "replay": [
+  {
+   "steps": 100,
+   "full_replay_ms": 16.931,
+   "events": 296,
+   "full_replay_events_replayed": 287,
+   "checkpoint_ms": 1.18,
+   "checkpoint_events_replayed": 19
+  },
+  {
+   "steps": 500,
+   "full_replay_ms": 105.899,
+   "events": 1536,
+   "full_replay_events_replayed": 1487,
+   "checkpoint_ms": 0.936,
+   "checkpoint_events_replayed": 19
+  },
+  {
+   "steps": 2000,
+   "full_replay_ms": 263.221,
+   "events": 6186,
+   "full_replay_events_replayed": 5987,
+   "checkpoint_ms": 1.073,
+   "checkpoint_events_replayed": 19
+  }
+ ]
+}

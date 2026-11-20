@@ -1,0 +1,4826 @@
+{
+ "command": "PYTHONPATH=src python benchmarks/chaos_bench.py --runs 200 --crashes 200 --workers 8 --seed 7 --lease-ttl 1",
+ "environment": {
+  "python": "3.13.2",
+  "sqlite": "3.45.3",
+  "os": "Windows 11",
+  "cpu_count": 12
+ },
+ "outbox": {
+  "config": {
+   "runs": 200,
+   "crashes": 200,
+   "max_runs": 5000,
+   "workers": 8,
+   "standby_workers": 1,
+   "seed": 7,
+   "lease_ttl": 1.0,
+   "poll": 0.05,
+   "publish_mode": "outbox",
+   "failure_rate": 0.3,
+   "random_kill_share": 0.25,
+   "random_kill_window": [
+    0.05,
+    1.5
+   ],
+   "plan_patience": 6.0,
+   "search_latency": 0.05,
+   "decision_weights": {
+    "approve": 0.7,
+    "edit": 0.15,
+    "reject": 0.1,
+    "none": 0.05
+   },
+   "approval_timeout": 4.0,
+   "escalation_timeout": 2.0,
+   "max_seconds": 3600.0
+  },
+  "wall_seconds": 126.8,
+  "timed_out": false,
+  "runs": 756,
+  "finished": 756,
+  "as_expected": 756,
+  "completion_rate": 1.0,
+  "outcomes": {
+   "completed:done": 638,
+   "completed:rejected": 118
+  },
+  "unexpected_runs": [],
+  "decisions": {
+   "none": 50,
+   "edit": 118,
+   "approve": 520,
+   "reject": 68
+  },
+  "workers_spawned": 209,
+  "kills": 200,
+  "kills_by_kind": {
+   "crash_point": 136,
+   "random_time": 54,
+   "unfired_plan": 10
+  },
+  "kills_by_point": {
+   "gate.before_signal": 21,
+   "outbox.after_deliver": 17,
+   "random": 64,
+   "run.after_claim": 29,
+   "step.after_commit": 18,
+   "step.after_start": 23,
+   "step.before_commit": 19,
+   "timer.before_fire": 9
+  },
+  "kills_holding_a_run": 163,
+  "recovery_seconds": [
+   0.6951,
+   0.7201,
+   0.7524,
+   0.7705,
+   0.8296,
+   0.833,
+   0.8345,
+   0.8481,
+   0.8666,
+   0.8689,
+   0.8732,
+   0.8752,
+   0.9134,
+   0.9169,
+   0.9257,
+   0.926,
+   0.9265,
+   0.9349,
+   0.9355,
+   0.9367,
+   0.943,
+   0.9439,
+   0.9463,
+   0.9492,
+   0.9494,
+   0.9495,
+   0.9496,
+   0.95,
+   0.9511,
+   0.9515,
+   0.9531,
+   0.9532,
+   0.959,
+   0.963,
+   0.9635,
+   0.9652,
+   0.966,
+   0.9662,
+   0.9663,
+   0.9668,
+   0.9703,
+   0.9713,
+   0.9757,
+   0.9763,
+   0.9773,
+   0.9782,
+   0.9797,
+   0.9817,
+   0.9834,
+   0.9848,
+   0.9852,
+   0.9863,
+   0.9871,
+   0.9872,
+   0.9885,
+   0.9886,
+   0.9891,
+   0.9895,
+   0.9896,
+   0.9897,
+   0.9934,
+   0.9937,
+   0.994,
+   0.9949,
+   0.9967,
+   0.9968,
+   0.9972,
+   0.9985,
+   0.9987,
+   1.001,
+   1.0021,
+   1.003,
+   1.0036,
+   1.0037,
+   1.0051,
+   1.0058,
+   1.006,
+   1.0079,
+   1.0088,
+   1.0091,
+   1.0108,
+   1.0109,
+   1.0109,
+   1.0118,
+   1.0121,
+   1.0123,
+   1.013,
+   1.013,
+   1.0132,
+   1.0136,
+   1.0142,
+   1.0187,
+   1.0196,
+   1.0201,
+   1.0208,
+   1.0218,
+   1.0219,
+   1.0225,
+   1.0232,
+   1.0242,
+   1.0242,
+   1.0249,
+   1.031,
+   1.0315,
+   1.0354,
+   1.0361,
+   1.0407,
+   1.0422,
+   1.0457,
+   1.0462,
+   1.0481,
+   1.0522,
+   1.0529,
+   1.053,
+   1.0541,
+   1.055,
+   1.0574,
+   1.0584,
+   1.0599,
+   1.0604,
+   1.0612,
+   1.062,
+   1.0624,
+   1.0645,
+   1.066,
+   1.0669,
+   1.0674,
+   1.0682,
+   1.0714,
+   1.0722,
+   1.0737,
+   1.0801,
+   1.0829,
+   1.0852,
+   1.0897,
+   1.0975,
+   1.0987,
+   1.1003,
+   1.1079,
+   1.109,
+   1.1184,
+   1.1202,
+   1.1291,
+   1.1349,
+   1.1442,
+   1.1586,
+   1.1603,
+   1.1664,
+   1.17,
+   1.1709,
+   1.1823,
+   1.1988,
+   1.2187,
+   1.2722,
+   1.2838,
+   1.3095,
+   1.4157,
+   2.0703
+  ],
+  "recovery": {
+   "count": 158,
+   "mean": 1.0204,
+   "p50": 1.0091,
+   "p95": 1.1823,
+   "max": 2.0703
+  },
+  "replay_ms": {
+   "count": 161,
+   "mean": 1.2252,
+   "p50": 1.158,
+   "p95": 2.108,
+   "max": 3.371
+  },
+  "articles": 638,
+  "cms_calls": 657,
+  "redeliveries_absorbed": 19,
+  "duplicate_publications": 0,
+  "missing_publications": 0,
+  "content_mismatches": 0,
+  "events": 17996,
+  "checkpoints": 3712,
+  "activity_executions": 3297,
+  "in_doubt_attempts": 89,
+  "completed_step_reexecutions": 0,
+  "failures_by_type": {
+   "ActivityTimeout": 130,
+   "RateLimited": 108,
+   "WorkerLost": 89,
+   "SearchUnavailable": 64
+  },
+  "gather_attempts_histogram": {
+   "1": 522,
+   "2": 162,
+   "3": 48,
+   "4": 15,
+   "5": 5,
+   "6": 3,
+   "8": 1
+  },
+  "retries_exhausted": 0,
+  "violations": [],
+  "kill_log": [
+   {
+    "worker": "w003",
+    "kind": "crash_point",
+    "plan": "run.after_claim:1",
+    "reached": "run.after_claim plan#1",
+    "at": 1795187093.6804273,
+    "held_runs": [
+     "chaos-0000"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w005",
+    "kind": "random_time",
+    "plan": "0.18s after ready",
+    "reached": null,
+    "at": 1795187094.6754978,
+    "held_runs": [
+     "chaos-0001"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w004",
+    "kind": "random_time",
+    "plan": "0.68s after ready",
+    "reached": null,
+    "at": 1795187096.423648,
+    "held_runs": [
+     "chaos-0003"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w008",
+    "kind": "crash_point",
+    "plan": "step.after_commit@plan:1",
+    "reached": "step.after_commit plan#1",
+    "at": 1795187097.6866002,
+    "held_runs": [
+     "chaos-0008"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w006",
+    "kind": "crash_point",
+    "plan": "outbox.after_deliver:1",
+    "reached": "outbox.after_deliver publish#1",
+    "at": 1795187098.5719242,
+    "held_runs": [],
+    "held_messages": [
+     "chaos-0001/publish#1/0"
+    ]
+   },
+   {
+    "worker": "w001",
+    "kind": "crash_point",
+    "plan": "step.after_start@publish:1",
+    "reached": "step.after_start publish#1",
+    "at": 1795187098.7452114,
+    "held_runs": [
+     "chaos-0003"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w002",
+    "kind": "random_time",
+    "plan": "0.83s after ready",
+    "reached": null,
+    "at": 1795187098.9271464,
+    "held_runs": [],
+    "held_messages": [
+     "chaos-0007/publish#1/0"
+    ]
+   },
+   {
+    "worker": "w011",
+    "kind": "crash_point",
+    "plan": "step.after_start@plan:2",
+    "reached": "step.after_start plan#1",
+    "at": 1795187103.6636,
+    "held_runs": [
+     "chaos-0038"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w007",
+    "kind": "unfired_plan",
+    "plan": "timer.before_fire:1",
+    "reached": null,
+    "at": 1795187103.8868835,
+    "held_runs": [
+     "chaos-0040"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w010",
+    "kind": "random_time",
+    "plan": "1.29s after ready",
+    "reached": null,
+    "at": 1795187104.141329,
+    "held_runs": [
+     "chaos-0026"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w012",
+    "kind": "crash_point",
+    "plan": "timer.before_fire:1",
+    "reached": "timer.before_fire escalation#1",
+    "at": 1795187107.491083,
+    "held_runs": [
+     "chaos-0000"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w014",
+    "kind": "random_time",
+    "plan": "0.19s after ready",
+    "reached": null,
+    "at": 1795187108.2291882,
+    "held_runs": [
+     "chaos-0030"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w013",
+    "kind": "random_time",
+    "plan": "0.88s after ready",
+    "reached": null,
+    "at": 1795187108.4640074,
+    "held_runs": [
+     "chaos-0045"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w016",
+    "kind": "crash_point",
+    "plan": "step.after_commit@publish:2",
+    "reached": "step.after_commit publish#1",
+    "at": 1795187108.7546628,
+    "held_runs": [],
+    "held_messages": []
+   },
+   {
+    "worker": "w015",
+    "kind": "crash_point",
+    "plan": "gate.before_signal:1",
+    "reached": "gate.before_signal approval#1",
+    "at": 1795187110.2759972,
+    "held_runs": [
+     "chaos-0053"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w019",
+    "kind": "crash_point",
+    "plan": "run.after_claim:2",
+    "reached": "run.after_claim approval#1",
+    "at": 1795187111.6025436,
+    "held_runs": [
+     "chaos-0045"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w018",
+    "kind": "random_time",
+    "plan": "0.31s after ready",
+    "reached": null,
+    "at": 1795187112.9034238,
+    "held_runs": [
+     "chaos-0066"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w017",
+    "kind": "crash_point",
+    "plan": "step.after_commit@draft:2",
+    "reached": "step.after_commit draft#1",
+    "at": 1795187113.7807574,
+    "held_runs": [
+     "chaos-0071"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w021",
+    "kind": "crash_point",
+    "plan": "run.after_claim:1",
+    "reached": "run.after_claim plan#1",
+    "at": 1795187115.020521,
+    "held_runs": [
+     "chaos-0076"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w020",
+    "kind": "crash_point",
+    "plan": "step.before_commit@publish:2",
+    "reached": "step.before_commit publish#1",
+    "at": 1795187115.4964895,
+    "held_runs": [
+     "chaos-0069"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w022",
+    "kind": "crash_point",
+    "plan": "step.after_start@draft:1",
+    "reached": "step.after_start draft#1",
+    "at": 1795187116.1347423,
+    "held_runs": [
+     "chaos-0076"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w023",
+    "kind": "crash_point",
+    "plan": "step.after_commit@plan:1",
+    "reached": "step.after_commit plan#1",
+    "at": 1795187117.7962418,
+    "held_runs": [
+     "chaos-0087"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w024",
+    "kind": "crash_point",
+    "plan": "gate.before_signal:2",
+    "reached": "gate.before_signal approval#1",
+    "at": 1795187118.6032658,
+    "held_runs": [
+     "chaos-0082"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w025",
+    "kind": "crash_point",
+    "plan": "step.before_commit@publish:2",
+    "reached": "step.before_commit publish#1",
+    "at": 1795187119.5294237,
+    "held_runs": [
+     "chaos-0074"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w026",
+    "kind": "random_time",
+    "plan": "0.19s after ready",
+    "reached": null,
+    "at": 1795187119.7393718,
+    "held_runs": [
+     "chaos-0090"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w028",
+    "kind": "random_time",
+    "plan": "1.07s after ready",
+    "reached": null,
+    "at": 1795187123.7594616,
+    "held_runs": [
+     "chaos-0092"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w030",
+    "kind": "crash_point",
+    "plan": "step.after_commit@draft:1",
+    "reached": "step.after_commit draft#1",
+    "at": 1795187124.2073016,
+    "held_runs": [
+     "chaos-0096"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w031",
+    "kind": "crash_point",
+    "plan": "step.before_commit@gather:1",
+    "reached": "step.before_commit gather#1",
+    "at": 1795187124.452021,
+    "held_runs": [
+     "chaos-0113"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w027",
+    "kind": "crash_point",
+    "plan": "timer.before_fire:1",
+    "reached": "timer.before_fire escalation#1",
+    "at": 1795187126.079286,
+    "held_runs": [
+     "chaos-0087"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w032",
+    "kind": "crash_point",
+    "plan": "step.after_start@draft:1",
+    "reached": "step.after_start draft#1",
+    "at": 1795187126.347602,
+    "held_runs": [
+     "chaos-0118"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w034",
+    "kind": "random_time",
+    "plan": "0.70s after ready",
+    "reached": null,
+    "at": 1795187128.2835712,
+    "held_runs": [
+     "chaos-0139"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w033",
+    "kind": "crash_point",
+    "plan": "step.after_commit@publish:2",
+    "reached": "step.after_commit publish#1",
+    "at": 1795187128.8075554,
+    "held_runs": [],
+    "held_messages": []
+   },
+   {
+    "worker": "w029",
+    "kind": "unfired_plan",
+    "plan": "timer.before_fire:2",
+    "reached": null,
+    "at": 1795187130.433629,
+    "held_runs": [
+     "chaos-0149"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w035",
+    "kind": "crash_point",
+    "plan": "step.after_start@publish:2",
+    "reached": "step.after_start publish#1",
+    "at": 1795187132.0849183,
+    "held_runs": [
+     "chaos-0146"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w037",
+    "kind": "random_time",
+    "plan": "0.31s after ready",
+    "reached": null,
+    "at": 1795187132.5392554,
+    "held_runs": [
+     "chaos-0159"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w036",
+    "kind": "crash_point",
+    "plan": "step.before_commit@publish:1",
+    "reached": "step.before_commit publish#1",
+    "at": 1795187132.6626427,
+    "held_runs": [
+     "chaos-0150"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w038",
+    "kind": "random_time",
+    "plan": "0.39s after ready",
+    "reached": null,
+    "at": 1795187133.3494701,
+    "held_runs": [
+     "chaos-0149"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w039",
+    "kind": "crash_point",
+    "plan": "gate.before_signal:1",
+    "reached": "gate.before_signal approval#1",
+    "at": 1795187133.5605094,
+    "held_runs": [
+     "chaos-0154"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w040",
+    "kind": "crash_point",
+    "plan": "run.after_claim:1",
+    "reached": "run.after_claim plan#1",
+    "at": 1795187135.197826,
+    "held_runs": [
+     "chaos-0167"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w041",
+    "kind": "crash_point",
+    "plan": "step.before_commit@draft:1",
+    "reached": "step.before_commit draft#1",
+    "at": 1795187135.4931016,
+    "held_runs": [
+     "chaos-0162"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w042",
+    "kind": "crash_point",
+    "plan": "gate.before_signal:1",
+    "reached": "gate.before_signal approval#1",
+    "at": 1795187136.340804,
+    "held_runs": [
+     "chaos-0164"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w045",
+    "kind": "crash_point",
+    "plan": "run.after_claim:1",
+    "reached": "run.after_claim gather#1",
+    "at": 1795187137.9246576,
+    "held_runs": [
+     "chaos-0169"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w044",
+    "kind": "crash_point",
+    "plan": "step.after_commit@plan:2",
+    "reached": "step.after_commit plan#1",
+    "at": 1795187138.2458014,
+    "held_runs": [
+     "chaos-0177"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w046",
+    "kind": "random_time",
+    "plan": "0.35s after ready",
+    "reached": null,
+    "at": 1795187138.6020184,
+    "held_runs": [
+     "chaos-0173"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w043",
+    "kind": "crash_point",
+    "plan": "outbox.after_deliver:2",
+    "reached": "outbox.after_deliver publish#1",
+    "at": 1795187138.6726837,
+    "held_runs": [],
+    "held_messages": [
+     "chaos-0174/publish#1/0"
+    ]
+   },
+   {
+    "worker": "w047",
+    "kind": "random_time",
+    "plan": "0.54s after ready",
+    "reached": null,
+    "at": 1795187138.7568014,
+    "held_runs": [
+     "chaos-0183"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w048",
+    "kind": "random_time",
+    "plan": "0.05s after ready",
+    "reached": null,
+    "at": 1795187138.9210238,
+    "held_runs": [
+     "chaos-0184"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w049",
+    "kind": "random_time",
+    "plan": "0.20s after ready",
+    "reached": null,
+    "at": 1795187139.332784,
+    "held_runs": [
+     "chaos-0178"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w050",
+    "kind": "crash_point",
+    "plan": "run.after_claim:1",
+    "reached": "run.after_claim plan#1",
+    "at": 1795187139.985414,
+    "held_runs": [
+     "chaos-0184"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w051",
+    "kind": "crash_point",
+    "plan": "gate.before_signal:2",
+    "reached": "gate.before_signal approval#1",
+    "at": 1795187141.5510938,
+    "held_runs": [
+     "chaos-0182"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w052",
+    "kind": "random_time",
+    "plan": "0.42s after ready",
+    "reached": null,
+    "at": 1795187141.7176185,
+    "held_runs": [
+     "chaos-0188"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w056",
+    "kind": "random_time",
+    "plan": "0.20s after ready",
+    "reached": null,
+    "at": 1795187142.147368,
+    "held_runs": [
+     "chaos-0175"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w054",
+    "kind": "random_time",
+    "plan": "0.76s after ready",
+    "reached": null,
+    "at": 1795187142.8643553,
+    "held_runs": [
+     "chaos-0205"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w053",
+    "kind": "crash_point",
+    "plan": "step.before_commit@publish:1",
+    "reached": "step.before_commit publish#1",
+    "at": 1795187143.0207517,
+    "held_runs": [
+     "chaos-0203"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w058",
+    "kind": "crash_point",
+    "plan": "step.after_start@draft:1",
+    "reached": "step.after_start draft#1",
+    "at": 1795187143.131655,
+    "held_runs": [
+     "chaos-0208"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w057",
+    "kind": "crash_point",
+    "plan": "step.before_commit@publish:1",
+    "reached": "step.before_commit publish#1",
+    "at": 1795187143.2379282,
+    "held_runs": [
+     "chaos-0175"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w055",
+    "kind": "crash_point",
+    "plan": "step.after_commit@publish:2",
+    "reached": "step.after_commit publish#1",
+    "at": 1795187143.6032097,
+    "held_runs": [],
+    "held_messages": []
+   },
+   {
+    "worker": "w059",
+    "kind": "crash_point",
+    "plan": "run.after_claim:2",
+    "reached": "run.after_claim gather#1",
+    "at": 1795187144.1509678,
+    "held_runs": [
+     "chaos-0207"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w061",
+    "kind": "crash_point",
+    "plan": "step.before_commit@draft:1",
+    "reached": "step.before_commit draft#1",
+    "at": 1795187145.4354699,
+    "held_runs": [
+     "chaos-0218"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w066",
+    "kind": "crash_point",
+    "plan": "run.after_claim:1",
+    "reached": "run.after_claim draft#1",
+    "at": 1795187146.4651308,
+    "held_runs": [
+     "chaos-0218"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w060",
+    "kind": "crash_point",
+    "plan": "outbox.after_deliver:1",
+    "reached": "outbox.after_deliver publish#1",
+    "at": 1795187146.5823193,
+    "held_runs": [],
+    "held_messages": [
+     "chaos-0219/publish#1/0"
+    ]
+   },
+   {
+    "worker": "w062",
+    "kind": "crash_point",
+    "plan": "step.after_start@draft:1",
+    "reached": "step.after_start draft#1",
+    "at": 1795187146.662937,
+    "held_runs": [
+     "chaos-0227"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w065",
+    "kind": "crash_point",
+    "plan": "step.after_start@gather:2",
+    "reached": "step.after_start gather#1",
+    "at": 1795187146.8016524,
+    "held_runs": [
+     "chaos-0229"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w063",
+    "kind": "crash_point",
+    "plan": "outbox.after_deliver:1",
+    "reached": "outbox.after_deliver publish#1",
+    "at": 1795187147.1125124,
+    "held_runs": [],
+    "held_messages": [
+     "chaos-0226/publish#1/0"
+    ]
+   },
+   {
+    "worker": "w067",
+    "kind": "crash_point",
+    "plan": "step.after_commit@draft:1",
+    "reached": "step.after_commit draft#1",
+    "at": 1795187147.754663,
+    "held_runs": [
+     "chaos-0237"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w064",
+    "kind": "crash_point",
+    "plan": "outbox.after_deliver:2",
+    "reached": "outbox.after_deliver publish#1",
+    "at": 1795187148.2230594,
+    "held_runs": [],
+    "held_messages": [
+     "chaos-0232/publish#1/0"
+    ]
+   },
+   {
+    "worker": "w069",
+    "kind": "crash_point",
+    "plan": "step.before_commit@plan:1",
+    "reached": "step.before_commit plan#1",
+    "at": 1795187149.4056017,
+    "held_runs": [
+     "chaos-0249"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w068",
+    "kind": "crash_point",
+    "plan": "step.before_commit@publish:2",
+    "reached": "step.before_commit publish#1",
+    "at": 1795187149.4533317,
+    "held_runs": [
+     "chaos-0241"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w073",
+    "kind": "crash_point",
+    "plan": "outbox.after_deliver:1",
+    "reached": "outbox.after_deliver publish#1",
+    "at": 1795187149.647402,
+    "held_runs": [],
+    "held_messages": [
+     "chaos-0243/publish#1/0"
+    ]
+   },
+   {
+    "worker": "w072",
+    "kind": "crash_point",
+    "plan": "step.before_commit@plan:1",
+    "reached": "step.before_commit plan#1",
+    "at": 1795187149.943985,
+    "held_runs": [
+     "chaos-0256"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w074",
+    "kind": "crash_point",
+    "plan": "step.after_start@publish:2",
+    "reached": "step.after_start publish#1",
+    "at": 1795187150.030242,
+    "held_runs": [
+     "chaos-0250"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w070",
+    "kind": "random_time",
+    "plan": "0.73s after ready",
+    "reached": null,
+    "at": 1795187150.1646867,
+    "held_runs": [
+     "chaos-0257"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w071",
+    "kind": "crash_point",
+    "plan": "step.after_commit@plan:2",
+    "reached": "step.after_commit plan#1",
+    "at": 1795187150.301396,
+    "held_runs": [
+     "chaos-0259"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w075",
+    "kind": "random_time",
+    "plan": "1.42s after ready",
+    "reached": null,
+    "at": 1795187151.6448703,
+    "held_runs": [
+     "chaos-0266"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w076",
+    "kind": "crash_point",
+    "plan": "step.after_commit@publish:1",
+    "reached": "step.after_commit publish#1",
+    "at": 1795187151.8109114,
+    "held_runs": [],
+    "held_messages": []
+   },
+   {
+    "worker": "w077",
+    "kind": "crash_point",
+    "plan": "step.after_start@gather:1",
+    "reached": "step.after_start gather#1",
+    "at": 1795187151.990902,
+    "held_runs": [
+     "chaos-0254"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w082",
+    "kind": "crash_point",
+    "plan": "run.after_claim:1",
+    "reached": "run.after_claim approval#1",
+    "at": 1795187153.4398143,
+    "held_runs": [
+     "chaos-0273"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w078",
+    "kind": "random_time",
+    "plan": "1.36s after ready",
+    "reached": null,
+    "at": 1795187153.6595013,
+    "held_runs": [],
+    "held_messages": []
+   },
+   {
+    "worker": "w080",
+    "kind": "random_time",
+    "plan": "0.84s after ready",
+    "reached": null,
+    "at": 1795187153.856199,
+    "held_runs": [
+     "chaos-0289"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w079",
+    "kind": "crash_point",
+    "plan": "step.after_start@publish:2",
+    "reached": "step.after_start publish#1",
+    "at": 1795187154.3412077,
+    "held_runs": [
+     "chaos-0288"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w081",
+    "kind": "random_time",
+    "plan": "1.21s after ready",
+    "reached": null,
+    "at": 1795187154.4630203,
+    "held_runs": [
+     "chaos-0270"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w084",
+    "kind": "crash_point",
+    "plan": "step.after_start@plan:2",
+    "reached": "step.after_start plan#1",
+    "at": 1795187154.8166902,
+    "held_runs": [
+     "chaos-0299"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w085",
+    "kind": "random_time",
+    "plan": "0.78s after ready",
+    "reached": null,
+    "at": 1795187155.3311348,
+    "held_runs": [
+     "chaos-0304"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w083",
+    "kind": "crash_point",
+    "plan": "outbox.after_deliver:1",
+    "reached": "outbox.after_deliver publish#1",
+    "at": 1795187155.4919944,
+    "held_runs": [],
+    "held_messages": [
+     "chaos-0297/publish#1/0"
+    ]
+   },
+   {
+    "worker": "w086",
+    "kind": "crash_point",
+    "plan": "step.before_commit@draft:2",
+    "reached": "step.before_commit draft#1",
+    "at": 1795187155.573501,
+    "held_runs": [
+     "chaos-0296"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w087",
+    "kind": "crash_point",
+    "plan": "run.after_claim:2",
+    "reached": "run.after_claim plan#1",
+    "at": 1795187155.9205089,
+    "held_runs": [
+     "chaos-0299"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w089",
+    "kind": "crash_point",
+    "plan": "gate.before_signal:1",
+    "reached": "gate.before_signal approval#1",
+    "at": 1795187156.3519824,
+    "held_runs": [
+     "chaos-0308"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w091",
+    "kind": "crash_point",
+    "plan": "outbox.after_deliver:1",
+    "reached": "outbox.after_deliver publish#1",
+    "at": 1795187157.5391858,
+    "held_runs": [],
+    "held_messages": [
+     "chaos-0299/publish#1/0"
+    ]
+   },
+   {
+    "worker": "w090",
+    "kind": "crash_point",
+    "plan": "gate.before_signal:1",
+    "reached": "gate.before_signal approval#1",
+    "at": 1795187157.7752757,
+    "held_runs": [
+     "chaos-0318"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w094",
+    "kind": "crash_point",
+    "plan": "gate.before_signal:1",
+    "reached": "gate.before_signal approval#1",
+    "at": 1795187157.9819155,
+    "held_runs": [
+     "chaos-0321"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w092",
+    "kind": "crash_point",
+    "plan": "outbox.after_deliver:1",
+    "reached": "outbox.after_deliver publish#1",
+    "at": 1795187158.1273456,
+    "held_runs": [],
+    "held_messages": [
+     "chaos-0323/publish#1/0"
+    ]
+   },
+   {
+    "worker": "w095",
+    "kind": "crash_point",
+    "plan": "gate.before_signal:2",
+    "reached": "gate.before_signal approval#1",
+    "at": 1795187158.4329698,
+    "held_runs": [
+     "chaos-0320"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w093",
+    "kind": "random_time",
+    "plan": "0.74s after ready",
+    "reached": null,
+    "at": 1795187158.5779874,
+    "held_runs": [
+     "chaos-0331"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w096",
+    "kind": "crash_point",
+    "plan": "run.after_claim:1",
+    "reached": "run.after_claim plan#1",
+    "at": 1795187158.802884,
+    "held_runs": [
+     "chaos-0332"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w097",
+    "kind": "random_time",
+    "plan": "0.45s after ready",
+    "reached": null,
+    "at": 1795187160.3593767,
+    "held_runs": [
+     "chaos-0330"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w098",
+    "kind": "crash_point",
+    "plan": "gate.before_signal:2",
+    "reached": "gate.before_signal approval#1",
+    "at": 1795187160.813677,
+    "held_runs": [
+     "chaos-0342"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w100",
+    "kind": "crash_point",
+    "plan": "gate.before_signal:1",
+    "reached": "gate.before_signal approval#1",
+    "at": 1795187160.874735,
+    "held_runs": [
+     "chaos-0341"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w099",
+    "kind": "crash_point",
+    "plan": "outbox.after_deliver:1",
+    "reached": "outbox.after_deliver publish#1",
+    "at": 1795187161.4064548,
+    "held_runs": [],
+    "held_messages": [
+     "chaos-0350/publish#1/0"
+    ]
+   },
+   {
+    "worker": "w103",
+    "kind": "random_time",
+    "plan": "0.23s after ready",
+    "reached": null,
+    "at": 1795187161.519165,
+    "held_runs": [
+     "chaos-0357"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w102",
+    "kind": "crash_point",
+    "plan": "step.before_commit@gather:2",
+    "reached": "step.before_commit gather#1",
+    "at": 1795187161.6929839,
+    "held_runs": [
+     "chaos-0348"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w088",
+    "kind": "unfired_plan",
+    "plan": "timer.before_fire:2",
+    "reached": null,
+    "at": 1795187161.7658863,
+    "held_runs": [
+     "chaos-0356"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w101",
+    "kind": "crash_point",
+    "plan": "step.after_commit@publish:1",
+    "reached": "step.after_commit publish#1",
+    "at": 1795187161.871758,
+    "held_runs": [],
+    "held_messages": []
+   },
+   {
+    "worker": "w104",
+    "kind": "crash_point",
+    "plan": "run.after_claim:1",
+    "reached": "run.after_claim plan#1",
+    "at": 1795187162.9243324,
+    "held_runs": [
+     "chaos-0361"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w106",
+    "kind": "crash_point",
+    "plan": "step.after_start@draft:1",
+    "reached": "step.after_start draft#1",
+    "at": 1795187163.2845829,
+    "held_runs": [
+     "chaos-0362"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w105",
+    "kind": "crash_point",
+    "plan": "step.after_start@draft:1",
+    "reached": "step.after_start draft#1",
+    "at": 1795187163.87999,
+    "held_runs": [
+     "chaos-0364"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w108",
+    "kind": "crash_point",
+    "plan": "run.after_claim:2",
+    "reached": "run.after_claim plan#1",
+    "at": 1795187164.3487196,
+    "held_runs": [
+     "chaos-0367"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w109",
+    "kind": "crash_point",
+    "plan": "step.after_start@gather:1",
+    "reached": "step.after_start gather#1",
+    "at": 1795187164.6019294,
+    "held_runs": [
+     "chaos-0370"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w107",
+    "kind": "crash_point",
+    "plan": "step.after_start@publish:1",
+    "reached": "step.after_start publish#1",
+    "at": 1795187164.9601948,
+    "held_runs": [
+     "chaos-0366"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w110",
+    "kind": "crash_point",
+    "plan": "gate.before_signal:2",
+    "reached": "gate.before_signal approval#1",
+    "at": 1795187165.0680985,
+    "held_runs": [
+     "chaos-0363"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w112",
+    "kind": "random_time",
+    "plan": "0.58s after ready",
+    "reached": null,
+    "at": 1795187165.7629132,
+    "held_runs": [
+     "chaos-0368"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w114",
+    "kind": "crash_point",
+    "plan": "gate.before_signal:2",
+    "reached": "gate.before_signal approval#1",
+    "at": 1795187166.131051,
+    "held_runs": [
+     "chaos-0363"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w113",
+    "kind": "crash_point",
+    "plan": "step.after_commit@publish:1",
+    "reached": "step.after_commit publish#1",
+    "at": 1795187166.238081,
+    "held_runs": [],
+    "held_messages": []
+   },
+   {
+    "worker": "w111",
+    "kind": "crash_point",
+    "plan": "step.after_start@draft:2",
+    "reached": "step.after_start draft#1",
+    "at": 1795187166.4029708,
+    "held_runs": [
+     "chaos-0379"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w115",
+    "kind": "crash_point",
+    "plan": "run.after_claim:1",
+    "reached": "run.after_claim gather#1",
+    "at": 1795187166.4775205,
+    "held_runs": [
+     "chaos-0369"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w116",
+    "kind": "crash_point",
+    "plan": "outbox.after_deliver:1",
+    "reached": "outbox.after_deliver publish#1",
+    "at": 1795187167.294056,
+    "held_runs": [],
+    "held_messages": [
+     "chaos-0378/publish#1/0"
+    ]
+   },
+   {
+    "worker": "w117",
+    "kind": "crash_point",
+    "plan": "run.after_claim:1",
+    "reached": "run.after_claim gather#1",
+    "at": 1795187168.9722404,
+    "held_runs": [
+     "chaos-0367"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w118",
+    "kind": "crash_point",
+    "plan": "run.after_claim:1",
+    "reached": "run.after_claim approval#1",
+    "at": 1795187169.5826783,
+    "held_runs": [
+     "chaos-0379"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w121",
+    "kind": "crash_point",
+    "plan": "run.after_claim:2",
+    "reached": "run.after_claim plan#1",
+    "at": 1795187171.150695,
+    "held_runs": [
+     "chaos-0389"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w120",
+    "kind": "crash_point",
+    "plan": "gate.before_signal:2",
+    "reached": "gate.before_signal approval#1",
+    "at": 1795187171.6942227,
+    "held_runs": [
+     "chaos-0369"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w119",
+    "kind": "crash_point",
+    "plan": "step.after_start@publish:2",
+    "reached": "step.after_start publish#1",
+    "at": 1795187172.4255872,
+    "held_runs": [
+     "chaos-0385"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w123",
+    "kind": "crash_point",
+    "plan": "run.after_claim:2",
+    "reached": "run.after_claim approval#1",
+    "at": 1795187173.2929695,
+    "held_runs": [
+     "chaos-0388"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w122",
+    "kind": "random_time",
+    "plan": "1.05s after ready",
+    "reached": null,
+    "at": 1795187173.512674,
+    "held_runs": [
+     "chaos-0394"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w125",
+    "kind": "crash_point",
+    "plan": "run.after_claim:1",
+    "reached": "run.after_claim plan#1",
+    "at": 1795187176.5113285,
+    "held_runs": [
+     "chaos-0413"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w126",
+    "kind": "random_time",
+    "plan": "1.30s after ready",
+    "reached": null,
+    "at": 1795187177.4,
+    "held_runs": [
+     "chaos-0415"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w128",
+    "kind": "crash_point",
+    "plan": "run.after_claim:1",
+    "reached": "run.after_claim gather#1",
+    "at": 1795187178.6532903,
+    "held_runs": [
+     "chaos-0419"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w129",
+    "kind": "crash_point",
+    "plan": "step.after_start@draft:1",
+    "reached": "step.after_start draft#1",
+    "at": 1795187179.1865976,
+    "held_runs": [
+     "chaos-0428"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w127",
+    "kind": "crash_point",
+    "plan": "step.before_commit@publish:2",
+    "reached": "step.before_commit publish#1",
+    "at": 1795187179.364802,
+    "held_runs": [
+     "chaos-0425"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w124",
+    "kind": "crash_point",
+    "plan": "timer.before_fire:1",
+    "reached": "timer.before_fire approval#1",
+    "at": 1795187180.17991,
+    "held_runs": [
+     "chaos-0405"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w131",
+    "kind": "crash_point",
+    "plan": "gate.before_signal:1",
+    "reached": "gate.before_signal approval#1",
+    "at": 1795187180.3478749,
+    "held_runs": [
+     "chaos-0432"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w130",
+    "kind": "random_time",
+    "plan": "1.40s after ready",
+    "reached": null,
+    "at": 1795187181.134503,
+    "held_runs": [
+     "chaos-0431"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w132",
+    "kind": "crash_point",
+    "plan": "gate.before_signal:1",
+    "reached": "gate.before_signal approval#1",
+    "at": 1795187183.037465,
+    "held_runs": [
+     "chaos-0437"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w133",
+    "kind": "crash_point",
+    "plan": "outbox.after_deliver:1",
+    "reached": "outbox.after_deliver publish#1",
+    "at": 1795187183.2340913,
+    "held_runs": [],
+    "held_messages": [
+     "chaos-0438/publish#1/0"
+    ]
+   },
+   {
+    "worker": "w134",
+    "kind": "crash_point",
+    "plan": "run.after_claim:1",
+    "reached": "run.after_claim approval#1",
+    "at": 1795187185.1555204,
+    "held_runs": [
+     "chaos-0429"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w136",
+    "kind": "crash_point",
+    "plan": "gate.before_signal:2",
+    "reached": "gate.before_signal approval#1",
+    "at": 1795187185.6876419,
+    "held_runs": [
+     "chaos-0444"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w135",
+    "kind": "random_time",
+    "plan": "0.78s after ready",
+    "reached": null,
+    "at": 1795187187.8186438,
+    "held_runs": [
+     "chaos-0456"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w139",
+    "kind": "crash_point",
+    "plan": "gate.before_signal:2",
+    "reached": "gate.before_signal approval#1",
+    "at": 1795187188.096801,
+    "held_runs": [
+     "chaos-0463"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w137",
+    "kind": "random_time",
+    "plan": "0.70s after ready",
+    "reached": null,
+    "at": 1795187188.119041,
+    "held_runs": [
+     "chaos-0469"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w142",
+    "kind": "crash_point",
+    "plan": "step.before_commit@plan:1",
+    "reached": "step.before_commit plan#1",
+    "at": 1795187188.187912,
+    "held_runs": [
+     "chaos-0474"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w141",
+    "kind": "crash_point",
+    "plan": "outbox.after_deliver:1",
+    "reached": "outbox.after_deliver publish#1",
+    "at": 1795187188.2108688,
+    "held_runs": [],
+    "held_messages": [
+     "chaos-0464/publish#1/0"
+    ]
+   },
+   {
+    "worker": "w140",
+    "kind": "crash_point",
+    "plan": "step.before_commit@gather:1",
+    "reached": "step.before_commit gather#1",
+    "at": 1795187188.333169,
+    "held_runs": [
+     "chaos-0475"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w144",
+    "kind": "crash_point",
+    "plan": "step.after_commit@gather:1",
+    "reached": "step.after_commit gather#1",
+    "at": 1795187188.9684887,
+    "held_runs": [
+     "chaos-0486"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w143",
+    "kind": "random_time",
+    "plan": "0.96s after ready",
+    "reached": null,
+    "at": 1795187189.2046554,
+    "held_runs": [
+     "chaos-0468"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w149",
+    "kind": "crash_point",
+    "plan": "run.after_claim:2",
+    "reached": "run.after_claim approval#1",
+    "at": 1795187189.563954,
+    "held_runs": [
+     "chaos-0490"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w148",
+    "kind": "random_time",
+    "plan": "0.32s after ready",
+    "reached": null,
+    "at": 1795187189.76972,
+    "held_runs": [],
+    "held_messages": []
+   },
+   {
+    "worker": "w150",
+    "kind": "crash_point",
+    "plan": "step.before_commit@draft:1",
+    "reached": "step.before_commit draft#1",
+    "at": 1795187190.287638,
+    "held_runs": [
+     "chaos-0505"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w145",
+    "kind": "random_time",
+    "plan": "1.27s after ready",
+    "reached": null,
+    "at": 1795187190.4629757,
+    "held_runs": [
+     "chaos-0507"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w153",
+    "kind": "crash_point",
+    "plan": "run.after_claim:2",
+    "reached": "run.after_claim approval#1",
+    "at": 1795187190.8367114,
+    "held_runs": [
+     "chaos-0513"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w152",
+    "kind": "random_time",
+    "plan": "0.32s after ready",
+    "reached": null,
+    "at": 1795187191.1054356,
+    "held_runs": [
+     "chaos-0522"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w151",
+    "kind": "random_time",
+    "plan": "1.33s after ready",
+    "reached": null,
+    "at": 1795187191.573624,
+    "held_runs": [],
+    "held_messages": []
+   },
+   {
+    "worker": "w155",
+    "kind": "random_time",
+    "plan": "1.18s after ready",
+    "reached": null,
+    "at": 1795187192.5917268,
+    "held_runs": [
+     "chaos-0539"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w157",
+    "kind": "random_time",
+    "plan": "0.90s after ready",
+    "reached": null,
+    "at": 1795187192.908794,
+    "held_runs": [
+     "chaos-0566"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w156",
+    "kind": "random_time",
+    "plan": "1.24s after ready",
+    "reached": null,
+    "at": 1795187192.9569025,
+    "held_runs": [
+     "chaos-0565"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w158",
+    "kind": "crash_point",
+    "plan": "step.before_commit@draft:1",
+    "reached": "step.before_commit draft#1",
+    "at": 1795187193.207089,
+    "held_runs": [
+     "chaos-0567"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w138",
+    "kind": "unfired_plan",
+    "plan": "timer.before_fire:2",
+    "reached": null,
+    "at": 1795187193.3973434,
+    "held_runs": [],
+    "held_messages": [
+     "chaos-0551/publish#1/0"
+    ]
+   },
+   {
+    "worker": "w161",
+    "kind": "crash_point",
+    "plan": "step.after_commit@gather:2",
+    "reached": "step.after_commit gather#1",
+    "at": 1795187194.068599,
+    "held_runs": [
+     "chaos-0587"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w160",
+    "kind": "crash_point",
+    "plan": "step.after_start@publish:2",
+    "reached": "step.after_start publish#1",
+    "at": 1795187194.2901738,
+    "held_runs": [
+     "chaos-0590"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w159",
+    "kind": "random_time",
+    "plan": "1.44s after ready",
+    "reached": null,
+    "at": 1795187195.0004869,
+    "held_runs": [
+     "chaos-0609"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w165",
+    "kind": "crash_point",
+    "plan": "outbox.after_deliver:1",
+    "reached": "outbox.after_deliver publish#1",
+    "at": 1795187195.0787244,
+    "held_runs": [],
+    "held_messages": [
+     "chaos-0601/publish#1/0"
+    ]
+   },
+   {
+    "worker": "w146",
+    "kind": "unfired_plan",
+    "plan": "timer.before_fire:2",
+    "reached": null,
+    "at": 1795187195.2159889,
+    "held_runs": [],
+    "held_messages": []
+   },
+   {
+    "worker": "w147",
+    "kind": "unfired_plan",
+    "plan": "timer.before_fire:2",
+    "reached": null,
+    "at": 1795187195.2916422,
+    "held_runs": [
+     "chaos-0617"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w154",
+    "kind": "crash_point",
+    "plan": "timer.before_fire:1",
+    "reached": "timer.before_fire approval#1",
+    "at": 1795187195.364869,
+    "held_runs": [
+     "chaos-0525"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w163",
+    "kind": "random_time",
+    "plan": "1.26s after ready",
+    "reached": null,
+    "at": 1795187195.4348922,
+    "held_runs": [
+     "chaos-0565"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w162",
+    "kind": "crash_point",
+    "plan": "timer.before_fire:1",
+    "reached": "timer.before_fire escalation#1",
+    "at": 1795187196.0124037,
+    "held_runs": [
+     "chaos-0498"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w166",
+    "kind": "crash_point",
+    "plan": "outbox.after_deliver:1",
+    "reached": "outbox.after_deliver publish#1",
+    "at": 1795187196.084231,
+    "held_runs": [],
+    "held_messages": [
+     "chaos-0626/publish#1/0"
+    ]
+   },
+   {
+    "worker": "w167",
+    "kind": "crash_point",
+    "plan": "gate.before_signal:1",
+    "reached": "gate.before_signal approval#1",
+    "at": 1795187196.1690369,
+    "held_runs": [
+     "chaos-0629"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w168",
+    "kind": "random_time",
+    "plan": "0.11s after ready",
+    "reached": null,
+    "at": 1795187196.234968,
+    "held_runs": [
+     "chaos-0633"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w170",
+    "kind": "crash_point",
+    "plan": "gate.before_signal:1",
+    "reached": "gate.before_signal approval#1",
+    "at": 1795187196.2771258,
+    "held_runs": [
+     "chaos-0614"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w169",
+    "kind": "crash_point",
+    "plan": "run.after_claim:2",
+    "reached": "run.after_claim plan#1",
+    "at": 1795187196.2993948,
+    "held_runs": [
+     "chaos-0634"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w172",
+    "kind": "crash_point",
+    "plan": "run.after_claim:2",
+    "reached": "run.after_claim plan#1",
+    "at": 1795187197.0015028,
+    "held_runs": [
+     "chaos-0645"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w174",
+    "kind": "crash_point",
+    "plan": "run.after_claim:2",
+    "reached": "run.after_claim approval#1",
+    "at": 1795187197.109322,
+    "held_runs": [
+     "chaos-0643"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w175",
+    "kind": "crash_point",
+    "plan": "run.after_claim:2",
+    "reached": "run.after_claim gather#1",
+    "at": 1795187197.21803,
+    "held_runs": [
+     "chaos-0633"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w180",
+    "kind": "crash_point",
+    "plan": "run.after_claim:1",
+    "reached": "run.after_claim plan#1",
+    "at": 1795187197.974699,
+    "held_runs": [
+     "chaos-0669"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w177",
+    "kind": "random_time",
+    "plan": "0.99s after ready",
+    "reached": null,
+    "at": 1795187198.2513537,
+    "held_runs": [
+     "chaos-0666"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w176",
+    "kind": "random_time",
+    "plan": "1.15s after ready",
+    "reached": null,
+    "at": 1795187198.4543574,
+    "held_runs": [],
+    "held_messages": []
+   },
+   {
+    "worker": "w178",
+    "kind": "crash_point",
+    "plan": "outbox.after_deliver:2",
+    "reached": "outbox.after_deliver publish#1",
+    "at": 1795187198.550847,
+    "held_runs": [],
+    "held_messages": [
+     "chaos-0665/publish#1/0"
+    ]
+   },
+   {
+    "worker": "w181",
+    "kind": "random_time",
+    "plan": "0.26s after ready",
+    "reached": null,
+    "at": 1795187199.1771796,
+    "held_runs": [],
+    "held_messages": []
+   },
+   {
+    "worker": "w179",
+    "kind": "random_time",
+    "plan": "1.37s after ready",
+    "reached": null,
+    "at": 1795187199.4324026,
+    "held_runs": [],
+    "held_messages": []
+   },
+   {
+    "worker": "w184",
+    "kind": "random_time",
+    "plan": "0.44s after ready",
+    "reached": null,
+    "at": 1795187199.7850847,
+    "held_runs": [
+     "chaos-0708"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w183",
+    "kind": "crash_point",
+    "plan": "step.after_start@plan:2",
+    "reached": "step.after_start plan#1",
+    "at": 1795187199.825194,
+    "held_runs": [
+     "chaos-0711"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w164",
+    "kind": "crash_point",
+    "plan": "timer.before_fire:2",
+    "reached": "timer.before_fire approval#1",
+    "at": 1795187199.842166,
+    "held_runs": [
+     "chaos-0625"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w187",
+    "kind": "crash_point",
+    "plan": "outbox.after_deliver:1",
+    "reached": "outbox.after_deliver publish#1",
+    "at": 1795187200.6066613,
+    "held_runs": [],
+    "held_messages": [
+     "chaos-0725/publish#1/0"
+    ]
+   },
+   {
+    "worker": "w189",
+    "kind": "crash_point",
+    "plan": "run.after_claim:2",
+    "reached": "run.after_claim plan#1",
+    "at": 1795187200.6897972,
+    "held_runs": [
+     "chaos-0729"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w185",
+    "kind": "crash_point",
+    "plan": "timer.before_fire:1",
+    "reached": "timer.before_fire approval#1",
+    "at": 1795187200.8379915,
+    "held_runs": [
+     "chaos-0625"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w186",
+    "kind": "crash_point",
+    "plan": "step.before_commit@draft:2",
+    "reached": "step.before_commit draft#1",
+    "at": 1795187200.9220867,
+    "held_runs": [
+     "chaos-0711"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w182",
+    "kind": "crash_point",
+    "plan": "timer.before_fire:2",
+    "reached": "timer.before_fire approval#1",
+    "at": 1795187201.0317333,
+    "held_runs": [
+     "chaos-0632"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w171",
+    "kind": "crash_point",
+    "plan": "timer.before_fire:1",
+    "reached": "timer.before_fire approval#1",
+    "at": 1795187201.2901642,
+    "held_runs": [
+     "chaos-0649"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w188",
+    "kind": "crash_point",
+    "plan": "gate.before_signal:1",
+    "reached": "gate.before_signal approval#1",
+    "at": 1795187201.796997,
+    "held_runs": [
+     "chaos-0729"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w190",
+    "kind": "random_time",
+    "plan": "0.72s after ready",
+    "reached": null,
+    "at": 1795187202.1157954,
+    "held_runs": [
+     "chaos-0632"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w195",
+    "kind": "crash_point",
+    "plan": "step.after_start@draft:1",
+    "reached": "step.after_start draft#1",
+    "at": 1795187202.1574595,
+    "held_runs": [
+     "chaos-0745"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w193",
+    "kind": "random_time",
+    "plan": "0.89s after ready",
+    "reached": null,
+    "at": 1795187202.6203759,
+    "held_runs": [
+     "chaos-0752"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w194",
+    "kind": "random_time",
+    "plan": "0.81s after ready",
+    "reached": null,
+    "at": 1795187202.660646,
+    "held_runs": [
+     "chaos-0755"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w196",
+    "kind": "crash_point",
+    "plan": "step.after_start@publish:2",
+    "reached": "step.after_start publish#1",
+    "at": 1795187202.7000709,
+    "held_runs": [
+     "chaos-0753"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w191",
+    "kind": "crash_point",
+    "plan": "step.after_commit@draft:2",
+    "reached": "step.after_commit draft#1",
+    "at": 1795187202.8958607,
+    "held_runs": [
+     "chaos-0754"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w173",
+    "kind": "unfired_plan",
+    "plan": "timer.before_fire:1",
+    "reached": null,
+    "at": 1795187203.0554688,
+    "held_runs": [],
+    "held_messages": []
+   },
+   {
+    "worker": "w192",
+    "kind": "random_time",
+    "plan": "1.42s after ready",
+    "reached": null,
+    "at": 1795187203.075354,
+    "held_runs": [],
+    "held_messages": [
+     "chaos-0750/publish#1/0"
+    ]
+   },
+   {
+    "worker": "w198",
+    "kind": "crash_point",
+    "plan": "step.after_commit@draft:1",
+    "reached": "step.after_commit draft#1",
+    "at": 1795187203.098425,
+    "held_runs": [
+     "chaos-0751"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w199",
+    "kind": "crash_point",
+    "plan": "step.after_commit@draft:1",
+    "reached": "step.after_commit draft#1",
+    "at": 1795187203.5558016,
+    "held_runs": [
+     "chaos-0752"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w197",
+    "kind": "unfired_plan",
+    "plan": "step.after_start@plan:2",
+    "reached": null,
+    "at": 1795187208.904739,
+    "held_runs": [],
+    "held_messages": []
+   },
+   {
+    "worker": "w200",
+    "kind": "unfired_plan",
+    "plan": "run.after_claim:2",
+    "reached": null,
+    "at": 1795187209.508684,
+    "held_runs": [],
+    "held_messages": []
+   },
+   {
+    "worker": "w201",
+    "kind": "unfired_plan",
+    "plan": "outbox.after_deliver:2",
+    "reached": null,
+    "at": 1795187209.5443184,
+    "held_runs": [],
+    "held_messages": []
+   }
+  ]
+ },
+ "direct": {
+  "config": {
+   "runs": 200,
+   "crashes": 200,
+   "max_runs": 5000,
+   "workers": 8,
+   "standby_workers": 1,
+   "seed": 7,
+   "lease_ttl": 1.0,
+   "poll": 0.05,
+   "publish_mode": "direct",
+   "failure_rate": 0.3,
+   "random_kill_share": 0.25,
+   "random_kill_window": [
+    0.05,
+    1.5
+   ],
+   "plan_patience": 6.0,
+   "search_latency": 0.05,
+   "decision_weights": {
+    "approve": 0.7,
+    "edit": 0.15,
+    "reject": 0.1,
+    "none": 0.05
+   },
+   "approval_timeout": 4.0,
+   "escalation_timeout": 2.0,
+   "max_seconds": 3600.0
+  },
+  "wall_seconds": 56.91,
+  "timed_out": false,
+  "runs": 926,
+  "finished": 926,
+  "as_expected": 926,
+  "completion_rate": 1.0,
+  "outcomes": {
+   "completed:done": 783,
+   "completed:rejected": 143
+  },
+  "unexpected_runs": [],
+  "decisions": {
+   "none": 60,
+   "edit": 145,
+   "approve": 638,
+   "reject": 83
+  },
+  "workers_spawned": 205,
+  "kills": 196,
+  "kills_by_kind": {
+   "crash_point": 122,
+   "random_time": 54,
+   "unfired_plan": 20
+  },
+  "kills_by_point": {
+   "gate.before_signal": 21,
+   "random": 74,
+   "run.after_claim": 29,
+   "step.after_commit": 16,
+   "step.after_start": 23,
+   "step.before_commit": 19,
+   "timer.before_fire": 14
+  },
+  "kills_holding_a_run": 170,
+  "recovery_seconds": [
+   0.704,
+   0.7344,
+   0.7368,
+   0.747,
+   0.781,
+   0.787,
+   0.7967,
+   0.8029,
+   0.8075,
+   0.8363,
+   0.8499,
+   0.8593,
+   0.8721,
+   0.8874,
+   0.8933,
+   0.8956,
+   0.8959,
+   0.9022,
+   0.9085,
+   0.9134,
+   0.9141,
+   0.9173,
+   0.918,
+   0.9199,
+   0.9201,
+   0.9264,
+   0.9292,
+   0.9338,
+   0.9348,
+   0.9409,
+   0.9428,
+   0.9437,
+   0.9481,
+   0.9487,
+   0.952,
+   0.9526,
+   0.953,
+   0.9542,
+   0.9543,
+   0.9556,
+   0.9565,
+   0.9573,
+   0.9574,
+   0.959,
+   0.9614,
+   0.9618,
+   0.9622,
+   0.963,
+   0.9643,
+   0.9645,
+   0.9648,
+   0.9648,
+   0.9649,
+   0.9689,
+   0.9708,
+   0.9738,
+   0.9743,
+   0.9745,
+   0.9756,
+   0.9781,
+   0.9796,
+   0.98,
+   0.9801,
+   0.9802,
+   0.9805,
+   0.9809,
+   0.9814,
+   0.9815,
+   0.9818,
+   0.9826,
+   0.9831,
+   0.9835,
+   0.9846,
+   0.9858,
+   0.9859,
+   0.9865,
+   0.9866,
+   0.9872,
+   0.9875,
+   0.9877,
+   0.9878,
+   0.9884,
+   0.9884,
+   0.9884,
+   0.9886,
+   0.9888,
+   0.9893,
+   0.9896,
+   0.9897,
+   0.99,
+   0.9908,
+   0.991,
+   0.9917,
+   0.992,
+   0.9922,
+   0.9925,
+   0.9936,
+   0.9937,
+   0.9939,
+   0.994,
+   0.9941,
+   0.9945,
+   0.9945,
+   0.9951,
+   0.9953,
+   0.9954,
+   0.9959,
+   0.996,
+   0.9965,
+   0.9969,
+   0.9973,
+   0.9974,
+   0.9976,
+   0.9978,
+   0.9979,
+   0.9986,
+   0.9988,
+   0.9992,
+   0.9993,
+   0.9994,
+   0.9999,
+   1.0001,
+   1.0016,
+   1.0022,
+   1.0023,
+   1.0027,
+   1.0034,
+   1.0038,
+   1.0043,
+   1.0049,
+   1.0055,
+   1.0057,
+   1.0058,
+   1.0064,
+   1.0066,
+   1.0072,
+   1.0073,
+   1.008,
+   1.0083,
+   1.0084,
+   1.0086,
+   1.0102,
+   1.0103,
+   1.0104,
+   1.0113,
+   1.012,
+   1.0131,
+   1.0137,
+   1.0139,
+   1.0141,
+   1.0177,
+   1.0211,
+   1.0218,
+   1.0239,
+   1.0244,
+   1.0249,
+   1.0252,
+   1.0254,
+   1.0258,
+   1.0262,
+   1.0293,
+   1.0328,
+   1.0375,
+   1.0462,
+   1.048,
+   1.059,
+   1.061,
+   1.0791
+  ],
+  "recovery": {
+   "count": 168,
+   "mean": 0.9699,
+   "p50": 0.9886,
+   "p95": 1.0262,
+   "max": 1.0791
+  },
+  "replay_ms": {
+   "count": 169,
+   "mean": 1.0402,
+   "p50": 0.95,
+   "p95": 1.859,
+   "max": 6.661
+  },
+  "articles": 793,
+  "cms_calls": 793,
+  "redeliveries_absorbed": 0,
+  "duplicate_publications": 10,
+  "missing_publications": 0,
+  "content_mismatches": 0,
+  "events": 22019,
+  "checkpoints": 4547,
+  "activity_executions": 4037,
+  "in_doubt_attempts": 94,
+  "completed_step_reexecutions": 0,
+  "failures_by_type": {
+   "ActivityTimeout": 158,
+   "RateLimited": 137,
+   "WorkerLost": 94,
+   "SearchUnavailable": 87
+  },
+  "gather_attempts_histogram": {
+   "1": 637,
+   "2": 192,
+   "3": 66,
+   "4": 20,
+   "5": 6,
+   "6": 4,
+   "8": 1
+  },
+  "retries_exhausted": 0,
+  "violations": [],
+  "kill_log": [
+   {
+    "worker": "w003",
+    "kind": "crash_point",
+    "plan": "run.after_claim:1",
+    "reached": "run.after_claim plan#1",
+    "at": 1795187218.5211477,
+    "held_runs": [
+     "chaos-0000"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w008",
+    "kind": "crash_point",
+    "plan": "step.after_commit@plan:1",
+    "reached": "step.after_commit plan#1",
+    "at": 1795187218.6038637,
+    "held_runs": [
+     "chaos-0004"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w005",
+    "kind": "random_time",
+    "plan": "0.18s after ready",
+    "reached": null,
+    "at": 1795187218.7801251,
+    "held_runs": [
+     "chaos-0013"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w004",
+    "kind": "random_time",
+    "plan": "0.68s after ready",
+    "reached": null,
+    "at": 1795187219.2007055,
+    "held_runs": [
+     "chaos-0020"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w002",
+    "kind": "random_time",
+    "plan": "0.83s after ready",
+    "reached": null,
+    "at": 1795187219.5057225,
+    "held_runs": [
+     "chaos-0014"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w011",
+    "kind": "crash_point",
+    "plan": "step.after_start@plan:2",
+    "reached": "step.after_start plan#1",
+    "at": 1795187219.8691788,
+    "held_runs": [
+     "chaos-0039"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w001",
+    "kind": "crash_point",
+    "plan": "step.after_start@publish:1",
+    "reached": "step.after_start publish#1",
+    "at": 1795187220.4237819,
+    "held_runs": [
+     "chaos-0052"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w014",
+    "kind": "random_time",
+    "plan": "0.19s after ready",
+    "reached": null,
+    "at": 1795187220.4778955,
+    "held_runs": [
+     "chaos-0054"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w010",
+    "kind": "random_time",
+    "plan": "1.29s after ready",
+    "reached": null,
+    "at": 1795187220.5933475,
+    "held_runs": [
+     "chaos-0057"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w013",
+    "kind": "random_time",
+    "plan": "0.88s after ready",
+    "reached": null,
+    "at": 1795187220.8169565,
+    "held_runs": [
+     "chaos-0061"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w015",
+    "kind": "crash_point",
+    "plan": "gate.before_signal:1",
+    "reached": "gate.before_signal approval#1",
+    "at": 1795187221.4769356,
+    "held_runs": [
+     "chaos-0054"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w018",
+    "kind": "random_time",
+    "plan": "0.31s after ready",
+    "reached": null,
+    "at": 1795187221.7442365,
+    "held_runs": [],
+    "held_messages": []
+   },
+   {
+    "worker": "w019",
+    "kind": "crash_point",
+    "plan": "run.after_claim:2",
+    "reached": "run.after_claim plan#1",
+    "at": 1795187221.8973618,
+    "held_runs": [
+     "chaos-0087"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w017",
+    "kind": "crash_point",
+    "plan": "step.after_commit@draft:2",
+    "reached": "step.after_commit draft#1",
+    "at": 1795187221.986434,
+    "held_runs": [
+     "chaos-0084"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w020",
+    "kind": "crash_point",
+    "plan": "step.before_commit@publish:2",
+    "reached": "step.before_commit publish#1",
+    "at": 1795187222.4660487,
+    "held_runs": [
+     "chaos-0098"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w021",
+    "kind": "crash_point",
+    "plan": "run.after_claim:1",
+    "reached": "run.after_claim approval#1",
+    "at": 1795187222.6378114,
+    "held_runs": [
+     "chaos-0100"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w022",
+    "kind": "crash_point",
+    "plan": "step.after_start@draft:1",
+    "reached": "step.after_start draft#1",
+    "at": 1795187222.7958512,
+    "held_runs": [
+     "chaos-0103"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w023",
+    "kind": "crash_point",
+    "plan": "step.after_commit@plan:1",
+    "reached": "step.after_commit plan#1",
+    "at": 1795187222.8815963,
+    "held_runs": [
+     "chaos-0087"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w007",
+    "kind": "crash_point",
+    "plan": "timer.before_fire:1",
+    "reached": "timer.before_fire approval#1",
+    "at": 1795187223.1059167,
+    "held_runs": [
+     "chaos-0019"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w016",
+    "kind": "crash_point",
+    "plan": "step.after_commit@publish:2",
+    "reached": "step.after_commit publish#1",
+    "at": 1795187223.2874403,
+    "held_runs": [],
+    "held_messages": []
+   },
+   {
+    "worker": "w026",
+    "kind": "random_time",
+    "plan": "0.19s after ready",
+    "reached": null,
+    "at": 1795187223.8802755,
+    "held_runs": [
+     "chaos-0123"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w027",
+    "kind": "crash_point",
+    "plan": "timer.before_fire:1",
+    "reached": "timer.before_fire approval#1",
+    "at": 1795187224.0019865,
+    "held_runs": [
+     "chaos-0000"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w025",
+    "kind": "crash_point",
+    "plan": "step.before_commit@publish:2",
+    "reached": "step.before_commit publish#1",
+    "at": 1795187224.0222766,
+    "held_runs": [
+     "chaos-0122"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w024",
+    "kind": "crash_point",
+    "plan": "gate.before_signal:2",
+    "reached": "gate.before_signal approval#1",
+    "at": 1795187224.0418043,
+    "held_runs": [
+     "chaos-0119"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w012",
+    "kind": "crash_point",
+    "plan": "timer.before_fire:1",
+    "reached": "timer.before_fire approval#1",
+    "at": 1795187224.0840461,
+    "held_runs": [
+     "chaos-0042"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w006",
+    "kind": "unfired_plan",
+    "plan": "outbox.after_deliver:1",
+    "reached": null,
+    "at": 1795187224.5456119,
+    "held_runs": [
+     "chaos-0129"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w028",
+    "kind": "random_time",
+    "plan": "1.07s after ready",
+    "reached": null,
+    "at": 1795187225.0501788,
+    "held_runs": [],
+    "held_messages": []
+   },
+   {
+    "worker": "w030",
+    "kind": "crash_point",
+    "plan": "step.after_commit@draft:1",
+    "reached": "step.after_commit draft#1",
+    "at": 1795187225.1206543,
+    "held_runs": [
+     "chaos-0135"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w033",
+    "kind": "crash_point",
+    "plan": "step.after_commit@publish:2",
+    "reached": "step.after_commit publish#1",
+    "at": 1795187225.203205,
+    "held_runs": [],
+    "held_messages": []
+   },
+   {
+    "worker": "w031",
+    "kind": "crash_point",
+    "plan": "step.before_commit@gather:1",
+    "reached": "step.before_commit gather#1",
+    "at": 1795187225.5570378,
+    "held_runs": [
+     "chaos-0143"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w032",
+    "kind": "crash_point",
+    "plan": "step.after_start@draft:1",
+    "reached": "step.after_start draft#1",
+    "at": 1795187225.717282,
+    "held_runs": [
+     "chaos-0145"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w034",
+    "kind": "random_time",
+    "plan": "0.70s after ready",
+    "reached": null,
+    "at": 1795187225.73591,
+    "held_runs": [
+     "chaos-0146"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w035",
+    "kind": "crash_point",
+    "plan": "step.after_start@publish:2",
+    "reached": "step.after_start publish#1",
+    "at": 1795187226.0392458,
+    "held_runs": [
+     "chaos-0150"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w037",
+    "kind": "random_time",
+    "plan": "0.31s after ready",
+    "reached": null,
+    "at": 1795187226.2674363,
+    "held_runs": [],
+    "held_messages": []
+   },
+   {
+    "worker": "w038",
+    "kind": "random_time",
+    "plan": "0.39s after ready",
+    "reached": null,
+    "at": 1795187226.4439511,
+    "held_runs": [
+     "chaos-0161"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w039",
+    "kind": "crash_point",
+    "plan": "gate.before_signal:1",
+    "reached": "gate.before_signal approval#1",
+    "at": 1795187226.4845917,
+    "held_runs": [
+     "chaos-0155"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w036",
+    "kind": "crash_point",
+    "plan": "step.before_commit@publish:1",
+    "reached": "step.before_commit publish#1",
+    "at": 1795187226.5484743,
+    "held_runs": [
+     "chaos-0159"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w040",
+    "kind": "crash_point",
+    "plan": "run.after_claim:1",
+    "reached": "run.after_claim approval#1",
+    "at": 1795187226.6375496,
+    "held_runs": [
+     "chaos-0143"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w041",
+    "kind": "crash_point",
+    "plan": "step.before_commit@draft:1",
+    "reached": "step.before_commit draft#1",
+    "at": 1795187226.7662878,
+    "held_runs": [
+     "chaos-0164"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w029",
+    "kind": "crash_point",
+    "plan": "timer.before_fire:2",
+    "reached": "timer.before_fire escalation#1",
+    "at": 1795187227.0521219,
+    "held_runs": [
+     "chaos-0000"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w042",
+    "kind": "crash_point",
+    "plan": "gate.before_signal:1",
+    "reached": "gate.before_signal approval#1",
+    "at": 1795187227.09716,
+    "held_runs": [
+     "chaos-0165"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w045",
+    "kind": "crash_point",
+    "plan": "run.after_claim:1",
+    "reached": "run.after_claim gather#1",
+    "at": 1795187227.4685647,
+    "held_runs": [
+     "chaos-0161"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w044",
+    "kind": "crash_point",
+    "plan": "step.after_commit@plan:2",
+    "reached": "step.after_commit plan#1",
+    "at": 1795187227.7946043,
+    "held_runs": [
+     "chaos-0179"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w048",
+    "kind": "random_time",
+    "plan": "0.05s after ready",
+    "reached": null,
+    "at": 1795187227.8753996,
+    "held_runs": [
+     "chaos-0177"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w046",
+    "kind": "random_time",
+    "plan": "0.35s after ready",
+    "reached": null,
+    "at": 1795187227.918782,
+    "held_runs": [
+     "chaos-0173"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w050",
+    "kind": "crash_point",
+    "plan": "run.after_claim:1",
+    "reached": "run.after_claim approval#1",
+    "at": 1795187228.0037627,
+    "held_runs": [
+     "chaos-0176"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w049",
+    "kind": "random_time",
+    "plan": "0.20s after ready",
+    "reached": null,
+    "at": 1795187228.1655023,
+    "held_runs": [
+     "chaos-0182"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w047",
+    "kind": "random_time",
+    "plan": "0.54s after ready",
+    "reached": null,
+    "at": 1795187228.2313433,
+    "held_runs": [
+     "chaos-0184"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w051",
+    "kind": "crash_point",
+    "plan": "gate.before_signal:2",
+    "reached": "gate.before_signal approval#1",
+    "at": 1795187228.5295858,
+    "held_runs": [
+     "chaos-0190"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w055",
+    "kind": "crash_point",
+    "plan": "step.after_commit@publish:2",
+    "reached": "step.after_commit publish#1",
+    "at": 1795187228.9631414,
+    "held_runs": [],
+    "held_messages": []
+   },
+   {
+    "worker": "w053",
+    "kind": "crash_point",
+    "plan": "step.before_commit@publish:1",
+    "reached": "step.before_commit publish#1",
+    "at": 1795187229.0052414,
+    "held_runs": [
+     "chaos-0195"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w052",
+    "kind": "random_time",
+    "plan": "0.42s after ready",
+    "reached": null,
+    "at": 1795187229.1621544,
+    "held_runs": [
+     "chaos-0198"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w057",
+    "kind": "crash_point",
+    "plan": "step.before_commit@publish:1",
+    "reached": "step.before_commit publish#1",
+    "at": 1795187229.2027302,
+    "held_runs": [
+     "chaos-0188"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w056",
+    "kind": "random_time",
+    "plan": "0.20s after ready",
+    "reached": null,
+    "at": 1795187229.3093898,
+    "held_runs": [
+     "chaos-0202"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w058",
+    "kind": "crash_point",
+    "plan": "step.after_start@draft:1",
+    "reached": "step.after_start draft#1",
+    "at": 1795187229.4799957,
+    "held_runs": [
+     "chaos-0203"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w054",
+    "kind": "random_time",
+    "plan": "0.76s after ready",
+    "reached": null,
+    "at": 1795187229.609451,
+    "held_runs": [
+     "chaos-0201"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w059",
+    "kind": "crash_point",
+    "plan": "run.after_claim:2",
+    "reached": "run.after_claim gather#1",
+    "at": 1795187230.0992873,
+    "held_runs": [
+     "chaos-0210"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w061",
+    "kind": "crash_point",
+    "plan": "step.before_commit@draft:1",
+    "reached": "step.before_commit draft#1",
+    "at": 1795187230.1439433,
+    "held_runs": [
+     "chaos-0212"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w062",
+    "kind": "crash_point",
+    "plan": "step.after_start@draft:1",
+    "reached": "step.after_start draft#1",
+    "at": 1795187230.2171752,
+    "held_runs": [
+     "chaos-0213"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w066",
+    "kind": "crash_point",
+    "plan": "run.after_claim:1",
+    "reached": "run.after_claim plan#1",
+    "at": 1795187230.9976583,
+    "held_runs": [
+     "chaos-0231"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w065",
+    "kind": "crash_point",
+    "plan": "step.after_start@gather:2",
+    "reached": "step.after_start gather#1",
+    "at": 1795187231.1673737,
+    "held_runs": [
+     "chaos-0233"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w067",
+    "kind": "crash_point",
+    "plan": "step.after_commit@draft:1",
+    "reached": "step.after_commit draft#1",
+    "at": 1795187231.1860974,
+    "held_runs": [
+     "chaos-0232"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w068",
+    "kind": "crash_point",
+    "plan": "step.before_commit@publish:2",
+    "reached": "step.before_commit publish#1",
+    "at": 1795187231.5974305,
+    "held_runs": [
+     "chaos-0239"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w069",
+    "kind": "crash_point",
+    "plan": "step.before_commit@plan:1",
+    "reached": "step.before_commit plan#1",
+    "at": 1795187231.8130996,
+    "held_runs": [
+     "chaos-0247"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w071",
+    "kind": "crash_point",
+    "plan": "step.after_commit@plan:2",
+    "reached": "step.after_commit plan#1",
+    "at": 1795187232.293838,
+    "held_runs": [
+     "chaos-0261"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w072",
+    "kind": "crash_point",
+    "plan": "step.before_commit@plan:1",
+    "reached": "step.before_commit plan#1",
+    "at": 1795187232.4688249,
+    "held_runs": [
+     "chaos-0265"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w070",
+    "kind": "random_time",
+    "plan": "0.73s after ready",
+    "reached": null,
+    "at": 1795187232.769141,
+    "held_runs": [
+     "chaos-0259"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w043",
+    "kind": "unfired_plan",
+    "plan": "outbox.after_deliver:2",
+    "reached": null,
+    "at": 1795187233.256847,
+    "held_runs": [
+     "chaos-0281"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w074",
+    "kind": "crash_point",
+    "plan": "step.after_start@publish:2",
+    "reached": "step.after_start publish#1",
+    "at": 1795187233.9686472,
+    "held_runs": [
+     "chaos-0293"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w076",
+    "kind": "crash_point",
+    "plan": "step.after_commit@publish:1",
+    "reached": "step.after_commit publish#1",
+    "at": 1795187234.0346186,
+    "held_runs": [],
+    "held_messages": []
+   },
+   {
+    "worker": "w077",
+    "kind": "crash_point",
+    "plan": "step.after_start@gather:1",
+    "reached": "step.after_start gather#1",
+    "at": 1795187234.6019042,
+    "held_runs": [
+     "chaos-0307"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w075",
+    "kind": "random_time",
+    "plan": "1.42s after ready",
+    "reached": null,
+    "at": 1795187234.689475,
+    "held_runs": [
+     "chaos-0303"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w060",
+    "kind": "unfired_plan",
+    "plan": "outbox.after_deliver:1",
+    "reached": null,
+    "at": 1795187235.9138713,
+    "held_runs": [
+     "chaos-0331"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w078",
+    "kind": "random_time",
+    "plan": "1.36s after ready",
+    "reached": null,
+    "at": 1795187236.1680002,
+    "held_runs": [
+     "chaos-0339"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w063",
+    "kind": "unfired_plan",
+    "plan": "outbox.after_deliver:1",
+    "reached": null,
+    "at": 1795187236.2554934,
+    "held_runs": [],
+    "held_messages": []
+   },
+   {
+    "worker": "w080",
+    "kind": "random_time",
+    "plan": "0.84s after ready",
+    "reached": null,
+    "at": 1795187236.318927,
+    "held_runs": [
+     "chaos-0345"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w064",
+    "kind": "unfired_plan",
+    "plan": "outbox.after_deliver:2",
+    "reached": null,
+    "at": 1795187236.449792,
+    "held_runs": [
+     "chaos-0347"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w081",
+    "kind": "random_time",
+    "plan": "1.21s after ready",
+    "reached": null,
+    "at": 1795187236.7349303,
+    "held_runs": [
+     "chaos-0343"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w082",
+    "kind": "crash_point",
+    "plan": "run.after_claim:1",
+    "reached": "run.after_claim plan#1",
+    "at": 1795187236.7764578,
+    "held_runs": [
+     "chaos-0351"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w084",
+    "kind": "crash_point",
+    "plan": "step.after_start@plan:2",
+    "reached": "step.after_start plan#1",
+    "at": 1795187237.2993944,
+    "held_runs": [
+     "chaos-0357"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w086",
+    "kind": "crash_point",
+    "plan": "step.before_commit@draft:2",
+    "reached": "step.before_commit draft#1",
+    "at": 1795187237.4754615,
+    "held_runs": [
+     "chaos-0347"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w087",
+    "kind": "crash_point",
+    "plan": "run.after_claim:2",
+    "reached": "run.after_claim approval#1",
+    "at": 1795187237.9938705,
+    "held_runs": [
+     "chaos-0365"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w085",
+    "kind": "random_time",
+    "plan": "0.78s after ready",
+    "reached": null,
+    "at": 1795187238.0117083,
+    "held_runs": [],
+    "held_messages": []
+   },
+   {
+    "worker": "w079",
+    "kind": "crash_point",
+    "plan": "step.after_start@publish:2",
+    "reached": "step.after_start publish#1",
+    "at": 1795187238.0301416,
+    "held_runs": [
+     "chaos-0356"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w073",
+    "kind": "unfired_plan",
+    "plan": "outbox.after_deliver:1",
+    "reached": null,
+    "at": 1795187238.600229,
+    "held_runs": [],
+    "held_messages": []
+   },
+   {
+    "worker": "w089",
+    "kind": "crash_point",
+    "plan": "gate.before_signal:1",
+    "reached": "gate.before_signal approval#1",
+    "at": 1795187238.7325346,
+    "held_runs": [
+     "chaos-0372"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w088",
+    "kind": "crash_point",
+    "plan": "timer.before_fire:2",
+    "reached": "timer.before_fire escalation#1",
+    "at": 1795187239.4550176,
+    "held_runs": [
+     "chaos-0283"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w090",
+    "kind": "crash_point",
+    "plan": "gate.before_signal:1",
+    "reached": "gate.before_signal approval#1",
+    "at": 1795187239.5389445,
+    "held_runs": [
+     "chaos-0379"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w093",
+    "kind": "random_time",
+    "plan": "0.74s after ready",
+    "reached": null,
+    "at": 1795187239.645933,
+    "held_runs": [
+     "chaos-0381"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w094",
+    "kind": "crash_point",
+    "plan": "gate.before_signal:1",
+    "reached": "gate.before_signal approval#1",
+    "at": 1795187239.7080865,
+    "held_runs": [
+     "chaos-0376"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w095",
+    "kind": "crash_point",
+    "plan": "gate.before_signal:2",
+    "reached": "gate.before_signal approval#1",
+    "at": 1795187240.406175,
+    "held_runs": [
+     "chaos-0389"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w096",
+    "kind": "crash_point",
+    "plan": "run.after_claim:1",
+    "reached": "run.after_claim gather#1",
+    "at": 1795187240.6244698,
+    "held_runs": [
+     "chaos-0391"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w098",
+    "kind": "crash_point",
+    "plan": "gate.before_signal:2",
+    "reached": "gate.before_signal approval#1",
+    "at": 1795187240.6915684,
+    "held_runs": [
+     "chaos-0392"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w097",
+    "kind": "random_time",
+    "plan": "0.45s after ready",
+    "reached": null,
+    "at": 1795187240.8739758,
+    "held_runs": [
+     "chaos-0388"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w100",
+    "kind": "crash_point",
+    "plan": "gate.before_signal:1",
+    "reached": "gate.before_signal approval#1",
+    "at": 1795187241.40874,
+    "held_runs": [
+     "chaos-0389"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w102",
+    "kind": "crash_point",
+    "plan": "step.before_commit@gather:2",
+    "reached": "step.before_commit gather#1",
+    "at": 1795187241.679251,
+    "held_runs": [
+     "chaos-0391"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w101",
+    "kind": "crash_point",
+    "plan": "step.after_commit@publish:1",
+    "reached": "step.after_commit publish#1",
+    "at": 1795187241.7199976,
+    "held_runs": [],
+    "held_messages": []
+   },
+   {
+    "worker": "w103",
+    "kind": "random_time",
+    "plan": "0.23s after ready",
+    "reached": null,
+    "at": 1795187241.9250383,
+    "held_runs": [
+     "chaos-0412"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w104",
+    "kind": "crash_point",
+    "plan": "run.after_claim:1",
+    "reached": "run.after_claim plan#1",
+    "at": 1795187242.2521417,
+    "held_runs": [
+     "chaos-0424"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w106",
+    "kind": "crash_point",
+    "plan": "step.after_start@draft:1",
+    "reached": "step.after_start draft#1",
+    "at": 1795187242.7285852,
+    "held_runs": [
+     "chaos-0432"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w083",
+    "kind": "unfired_plan",
+    "plan": "outbox.after_deliver:1",
+    "reached": null,
+    "at": 1795187243.0648634,
+    "held_runs": [
+     "chaos-0438"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w108",
+    "kind": "crash_point",
+    "plan": "run.after_claim:2",
+    "reached": "run.after_claim gather#1",
+    "at": 1795187243.1703146,
+    "held_runs": [
+     "chaos-0412"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w107",
+    "kind": "crash_point",
+    "plan": "step.after_start@publish:1",
+    "reached": "step.after_start publish#1",
+    "at": 1795187243.2127209,
+    "held_runs": [
+     "chaos-0439"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w105",
+    "kind": "crash_point",
+    "plan": "step.after_start@draft:1",
+    "reached": "step.after_start draft#1",
+    "at": 1795187243.3639362,
+    "held_runs": [
+     "chaos-0424"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w109",
+    "kind": "crash_point",
+    "plan": "step.after_start@gather:1",
+    "reached": "step.after_start gather#1",
+    "at": 1795187243.7104464,
+    "held_runs": [
+     "chaos-0449"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w110",
+    "kind": "crash_point",
+    "plan": "gate.before_signal:2",
+    "reached": "gate.before_signal approval#1",
+    "at": 1795187243.9511795,
+    "held_runs": [
+     "chaos-0451"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w113",
+    "kind": "crash_point",
+    "plan": "step.after_commit@publish:1",
+    "reached": "step.after_commit publish#1",
+    "at": 1795187244.6287413,
+    "held_runs": [],
+    "held_messages": []
+   },
+   {
+    "worker": "w112",
+    "kind": "random_time",
+    "plan": "0.58s after ready",
+    "reached": null,
+    "at": 1795187244.671491,
+    "held_runs": [
+     "chaos-0463"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w115",
+    "kind": "crash_point",
+    "plan": "run.after_claim:1",
+    "reached": "run.after_claim escalation#1",
+    "at": 1795187244.8019073,
+    "held_runs": [
+     "chaos-0373"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w091",
+    "kind": "unfired_plan",
+    "plan": "outbox.after_deliver:1",
+    "reached": null,
+    "at": 1795187244.8676925,
+    "held_runs": [
+     "chaos-0464"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w092",
+    "kind": "unfired_plan",
+    "plan": "outbox.after_deliver:1",
+    "reached": null,
+    "at": 1795187244.9092247,
+    "held_runs": [
+     "chaos-0431"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w111",
+    "kind": "crash_point",
+    "plan": "step.after_start@draft:2",
+    "reached": "step.after_start draft#1",
+    "at": 1795187244.97339,
+    "held_runs": [
+     "chaos-0456"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w118",
+    "kind": "crash_point",
+    "plan": "run.after_claim:1",
+    "reached": "run.after_claim gather#1",
+    "at": 1795187245.70881,
+    "held_runs": [
+     "chaos-0463"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w117",
+    "kind": "crash_point",
+    "plan": "run.after_claim:1",
+    "reached": "run.after_claim approval#1",
+    "at": 1795187245.7807992,
+    "held_runs": [
+     "chaos-0477"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w119",
+    "kind": "crash_point",
+    "plan": "step.after_start@publish:2",
+    "reached": "step.after_start publish#1",
+    "at": 1795187245.867556,
+    "held_runs": [
+     "chaos-0464"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w120",
+    "kind": "crash_point",
+    "plan": "gate.before_signal:2",
+    "reached": "gate.before_signal approval#1",
+    "at": 1795187245.9374847,
+    "held_runs": [
+     "chaos-0480"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w114",
+    "kind": "crash_point",
+    "plan": "gate.before_signal:2",
+    "reached": "gate.before_signal approval#1",
+    "at": 1795187246.022315,
+    "held_runs": [
+     "chaos-0482"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w099",
+    "kind": "unfired_plan",
+    "plan": "outbox.after_deliver:1",
+    "reached": null,
+    "at": 1795187246.5285127,
+    "held_runs": [
+     "chaos-0492"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w121",
+    "kind": "crash_point",
+    "plan": "run.after_claim:2",
+    "reached": "run.after_claim approval#1",
+    "at": 1795187246.5704446,
+    "held_runs": [
+     "chaos-0490"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w123",
+    "kind": "crash_point",
+    "plan": "run.after_claim:2",
+    "reached": "run.after_claim plan#1",
+    "at": 1795187246.743939,
+    "held_runs": [
+     "chaos-0494"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w125",
+    "kind": "crash_point",
+    "plan": "run.after_claim:1",
+    "reached": "run.after_claim approval#1",
+    "at": 1795187246.8639286,
+    "held_runs": [
+     "chaos-0488"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w122",
+    "kind": "random_time",
+    "plan": "1.05s after ready",
+    "reached": null,
+    "at": 1795187247.6262252,
+    "held_runs": [],
+    "held_messages": []
+   },
+   {
+    "worker": "w128",
+    "kind": "crash_point",
+    "plan": "run.after_claim:1",
+    "reached": "run.after_claim plan#1",
+    "at": 1795187247.668268,
+    "held_runs": [
+     "chaos-0515"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w127",
+    "kind": "crash_point",
+    "plan": "step.before_commit@publish:2",
+    "reached": "step.before_commit publish#1",
+    "at": 1795187247.6867764,
+    "held_runs": [
+     "chaos-0511"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w124",
+    "kind": "crash_point",
+    "plan": "timer.before_fire:1",
+    "reached": "timer.before_fire escalation#1",
+    "at": 1795187247.9046268,
+    "held_runs": [
+     "chaos-0408"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w126",
+    "kind": "random_time",
+    "plan": "1.30s after ready",
+    "reached": null,
+    "at": 1795187248.2029343,
+    "held_runs": [
+     "chaos-0521"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w129",
+    "kind": "crash_point",
+    "plan": "step.after_start@draft:1",
+    "reached": "step.after_start draft#1",
+    "at": 1795187248.3026006,
+    "held_runs": [
+     "chaos-0514"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w132",
+    "kind": "crash_point",
+    "plan": "gate.before_signal:1",
+    "reached": "gate.before_signal approval#1",
+    "at": 1795187248.751591,
+    "held_runs": [
+     "chaos-0463"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w134",
+    "kind": "crash_point",
+    "plan": "run.after_claim:1",
+    "reached": "run.after_claim plan#1",
+    "at": 1795187248.792745,
+    "held_runs": [
+     "chaos-0533"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w130",
+    "kind": "random_time",
+    "plan": "1.40s after ready",
+    "reached": null,
+    "at": 1795187249.098325,
+    "held_runs": [
+     "chaos-0535"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w131",
+    "kind": "crash_point",
+    "plan": "gate.before_signal:1",
+    "reached": "gate.before_signal approval#1",
+    "at": 1795187249.5082495,
+    "held_runs": [
+     "chaos-0538"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w135",
+    "kind": "random_time",
+    "plan": "0.78s after ready",
+    "reached": null,
+    "at": 1795187250.0233705,
+    "held_runs": [],
+    "held_messages": []
+   },
+   {
+    "worker": "w137",
+    "kind": "random_time",
+    "plan": "0.70s after ready",
+    "reached": null,
+    "at": 1795187250.296309,
+    "held_runs": [
+     "chaos-0558"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w140",
+    "kind": "crash_point",
+    "plan": "step.before_commit@gather:1",
+    "reached": "step.before_commit gather#1",
+    "at": 1795187250.5120385,
+    "held_runs": [
+     "chaos-0566"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w139",
+    "kind": "crash_point",
+    "plan": "gate.before_signal:2",
+    "reached": "gate.before_signal approval#1",
+    "at": 1795187250.556992,
+    "held_runs": [
+     "chaos-0562"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w142",
+    "kind": "crash_point",
+    "plan": "step.before_commit@plan:1",
+    "reached": "step.before_commit plan#1",
+    "at": 1795187251.1281164,
+    "held_runs": [
+     "chaos-0582"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w136",
+    "kind": "crash_point",
+    "plan": "gate.before_signal:2",
+    "reached": "gate.before_signal approval#1",
+    "at": 1795187251.3343887,
+    "held_runs": [
+     "chaos-0583"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w116",
+    "kind": "unfired_plan",
+    "plan": "outbox.after_deliver:1",
+    "reached": null,
+    "at": 1795187251.5389884,
+    "held_runs": [
+     "chaos-0590"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w144",
+    "kind": "crash_point",
+    "plan": "step.after_commit@gather:1",
+    "reached": "step.after_commit gather#1",
+    "at": 1795187252.2228568,
+    "held_runs": [
+     "chaos-0566"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w143",
+    "kind": "random_time",
+    "plan": "0.96s after ready",
+    "reached": null,
+    "at": 1795187252.4058282,
+    "held_runs": [],
+    "held_messages": []
+   },
+   {
+    "worker": "w147",
+    "kind": "crash_point",
+    "plan": "timer.before_fire:2",
+    "reached": "timer.before_fire escalation#1",
+    "at": 1795187253.1208005,
+    "held_runs": [
+     "chaos-0498"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w145",
+    "kind": "random_time",
+    "plan": "1.27s after ready",
+    "reached": null,
+    "at": 1795187253.24744,
+    "held_runs": [
+     "chaos-0626"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w148",
+    "kind": "random_time",
+    "plan": "0.32s after ready",
+    "reached": null,
+    "at": 1795187253.524566,
+    "held_runs": [
+     "chaos-0634"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w149",
+    "kind": "crash_point",
+    "plan": "run.after_claim:2",
+    "reached": "run.after_claim plan#1",
+    "at": 1795187253.9293895,
+    "held_runs": [
+     "chaos-0649"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w150",
+    "kind": "crash_point",
+    "plan": "step.before_commit@draft:1",
+    "reached": "step.before_commit draft#1",
+    "at": 1795187254.037409,
+    "held_runs": [
+     "chaos-0650"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w133",
+    "kind": "unfired_plan",
+    "plan": "outbox.after_deliver:1",
+    "reached": null,
+    "at": 1795187254.663281,
+    "held_runs": [],
+    "held_messages": []
+   },
+   {
+    "worker": "w152",
+    "kind": "random_time",
+    "plan": "0.32s after ready",
+    "reached": null,
+    "at": 1795187254.851897,
+    "held_runs": [],
+    "held_messages": []
+   },
+   {
+    "worker": "w153",
+    "kind": "crash_point",
+    "plan": "run.after_claim:2",
+    "reached": "run.after_claim approval#1",
+    "at": 1795187255.1814685,
+    "held_runs": [
+     "chaos-0650"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w151",
+    "kind": "random_time",
+    "plan": "1.33s after ready",
+    "reached": null,
+    "at": 1795187255.4386163,
+    "held_runs": [
+     "chaos-0666"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w138",
+    "kind": "unfired_plan",
+    "plan": "timer.before_fire:2",
+    "reached": null,
+    "at": 1795187255.750508,
+    "held_runs": [
+     "chaos-0688"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w158",
+    "kind": "crash_point",
+    "plan": "step.before_commit@draft:1",
+    "reached": "step.before_commit draft#1",
+    "at": 1795187256.4241781,
+    "held_runs": [
+     "chaos-0701"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w155",
+    "kind": "random_time",
+    "plan": "1.18s after ready",
+    "reached": null,
+    "at": 1795187256.7138252,
+    "held_runs": [
+     "chaos-0707"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w141",
+    "kind": "unfired_plan",
+    "plan": "outbox.after_deliver:1",
+    "reached": null,
+    "at": 1795187256.8890498,
+    "held_runs": [],
+    "held_messages": []
+   },
+   {
+    "worker": "w157",
+    "kind": "random_time",
+    "plan": "0.90s after ready",
+    "reached": null,
+    "at": 1795187256.9063997,
+    "held_runs": [],
+    "held_messages": []
+   },
+   {
+    "worker": "w156",
+    "kind": "random_time",
+    "plan": "1.24s after ready",
+    "reached": null,
+    "at": 1795187256.948541,
+    "held_runs": [
+     "chaos-0713"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w154",
+    "kind": "crash_point",
+    "plan": "timer.before_fire:1",
+    "reached": "timer.before_fire approval#1",
+    "at": 1795187257.214994,
+    "held_runs": [
+     "chaos-0618"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w146",
+    "kind": "crash_point",
+    "plan": "timer.before_fire:2",
+    "reached": "timer.before_fire approval#1",
+    "at": 1795187257.5468373,
+    "held_runs": [
+     "chaos-0625"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w161",
+    "kind": "crash_point",
+    "plan": "step.after_commit@gather:2",
+    "reached": "step.after_commit gather#1",
+    "at": 1795187257.7623236,
+    "held_runs": [
+     "chaos-0728"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w160",
+    "kind": "crash_point",
+    "plan": "step.after_start@publish:2",
+    "reached": "step.after_start publish#1",
+    "at": 1795187258.3059032,
+    "held_runs": [
+     "chaos-0713"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w159",
+    "kind": "random_time",
+    "plan": "1.44s after ready",
+    "reached": null,
+    "at": 1795187258.3700838,
+    "held_runs": [],
+    "held_messages": []
+   },
+   {
+    "worker": "w167",
+    "kind": "crash_point",
+    "plan": "gate.before_signal:1",
+    "reached": "gate.before_signal approval#1",
+    "at": 1795187258.6425726,
+    "held_runs": [
+     "chaos-0730"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w163",
+    "kind": "random_time",
+    "plan": "1.26s after ready",
+    "reached": null,
+    "at": 1795187259.0905743,
+    "held_runs": [],
+    "held_messages": []
+   },
+   {
+    "worker": "w168",
+    "kind": "random_time",
+    "plan": "0.11s after ready",
+    "reached": null,
+    "at": 1795187259.2856302,
+    "held_runs": [],
+    "held_messages": []
+   },
+   {
+    "worker": "w169",
+    "kind": "crash_point",
+    "plan": "run.after_claim:2",
+    "reached": "run.after_claim plan#1",
+    "at": 1795187259.5508566,
+    "held_runs": [
+     "chaos-0751"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w170",
+    "kind": "crash_point",
+    "plan": "gate.before_signal:1",
+    "reached": "gate.before_signal approval#1",
+    "at": 1795187259.5702994,
+    "held_runs": [
+     "chaos-0736"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w162",
+    "kind": "crash_point",
+    "plan": "timer.before_fire:1",
+    "reached": "timer.before_fire escalation#1",
+    "at": 1795187260.2423577,
+    "held_runs": [
+     "chaos-0618"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w174",
+    "kind": "crash_point",
+    "plan": "run.after_claim:2",
+    "reached": "run.after_claim gather#1",
+    "at": 1795187260.4721484,
+    "held_runs": [
+     "chaos-0763"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w164",
+    "kind": "crash_point",
+    "plan": "timer.before_fire:2",
+    "reached": "timer.before_fire escalation#1",
+    "at": 1795187260.6574879,
+    "held_runs": [
+     "chaos-0625"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w172",
+    "kind": "crash_point",
+    "plan": "run.after_claim:2",
+    "reached": "run.after_claim approval#1",
+    "at": 1795187260.7680686,
+    "held_runs": [
+     "chaos-0771"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w175",
+    "kind": "crash_point",
+    "plan": "run.after_claim:2",
+    "reached": "run.after_claim approval#1",
+    "at": 1795187261.1121707,
+    "held_runs": [
+     "chaos-0775"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w171",
+    "kind": "crash_point",
+    "plan": "timer.before_fire:1",
+    "reached": "timer.before_fire escalation#1",
+    "at": 1795187261.6878989,
+    "held_runs": [
+     "chaos-0625"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w176",
+    "kind": "random_time",
+    "plan": "1.15s after ready",
+    "reached": null,
+    "at": 1795187262.4895935,
+    "held_runs": [
+     "chaos-0805"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w177",
+    "kind": "random_time",
+    "plan": "0.99s after ready",
+    "reached": null,
+    "at": 1795187262.5580747,
+    "held_runs": [
+     "chaos-0801"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w180",
+    "kind": "crash_point",
+    "plan": "run.after_claim:1",
+    "reached": "run.after_claim gather#1",
+    "at": 1795187262.5778513,
+    "held_runs": [
+     "chaos-0794"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w179",
+    "kind": "random_time",
+    "plan": "1.37s after ready",
+    "reached": null,
+    "at": 1795187263.3352478,
+    "held_runs": [
+     "chaos-0826"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w183",
+    "kind": "crash_point",
+    "plan": "step.after_start@plan:2",
+    "reached": "step.after_start plan#1",
+    "at": 1795187263.5608659,
+    "held_runs": [
+     "chaos-0837"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w181",
+    "kind": "random_time",
+    "plan": "0.26s after ready",
+    "reached": null,
+    "at": 1795187263.8760197,
+    "held_runs": [
+     "chaos-0835"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w165",
+    "kind": "unfired_plan",
+    "plan": "outbox.after_deliver:1",
+    "reached": null,
+    "at": 1795187264.1369355,
+    "held_runs": [
+     "chaos-0840"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w166",
+    "kind": "unfired_plan",
+    "plan": "outbox.after_deliver:1",
+    "reached": null,
+    "at": 1795187264.3982575,
+    "held_runs": [
+     "chaos-0851"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w184",
+    "kind": "random_time",
+    "plan": "0.44s after ready",
+    "reached": null,
+    "at": 1795187264.6160314,
+    "held_runs": [
+     "chaos-0837"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w186",
+    "kind": "crash_point",
+    "plan": "step.before_commit@draft:2",
+    "reached": "step.before_commit draft#1",
+    "at": 1795187264.9773245,
+    "held_runs": [
+     "chaos-0860"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w189",
+    "kind": "crash_point",
+    "plan": "run.after_claim:2",
+    "reached": "run.after_claim plan#1",
+    "at": 1795187265.5986536,
+    "held_runs": [
+     "chaos-0872"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w188",
+    "kind": "crash_point",
+    "plan": "gate.before_signal:1",
+    "reached": "gate.before_signal approval#1",
+    "at": 1795187265.9926775,
+    "held_runs": [
+     "chaos-0861"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w185",
+    "kind": "crash_point",
+    "plan": "timer.before_fire:1",
+    "reached": "timer.before_fire escalation#1",
+    "at": 1795187266.3418095,
+    "held_runs": [
+     "chaos-0755"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w173",
+    "kind": "unfired_plan",
+    "plan": "timer.before_fire:1",
+    "reached": null,
+    "at": 1795187266.5114136,
+    "held_runs": [
+     "chaos-0885"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w190",
+    "kind": "random_time",
+    "plan": "0.72s after ready",
+    "reached": null,
+    "at": 1795187266.5289571,
+    "held_runs": [],
+    "held_messages": []
+   },
+   {
+    "worker": "w178",
+    "kind": "unfired_plan",
+    "plan": "outbox.after_deliver:2",
+    "reached": null,
+    "at": 1795187267.6020906,
+    "held_runs": [
+     "chaos-0891"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w195",
+    "kind": "crash_point",
+    "plan": "step.after_start@draft:1",
+    "reached": "step.after_start draft#1",
+    "at": 1795187267.700109,
+    "held_runs": [
+     "chaos-0909"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w182",
+    "kind": "crash_point",
+    "plan": "timer.before_fire:2",
+    "reached": "timer.before_fire approval#1",
+    "at": 1795187268.1367004,
+    "held_runs": [
+     "chaos-0844"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w193",
+    "kind": "random_time",
+    "plan": "0.89s after ready",
+    "reached": null,
+    "at": 1795187268.200761,
+    "held_runs": [
+     "chaos-0914"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w194",
+    "kind": "random_time",
+    "plan": "0.81s after ready",
+    "reached": null,
+    "at": 1795187268.242145,
+    "held_runs": [],
+    "held_messages": []
+   },
+   {
+    "worker": "w192",
+    "kind": "random_time",
+    "plan": "1.42s after ready",
+    "reached": null,
+    "at": 1795187268.2858193,
+    "held_runs": [
+     "chaos-0922"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w196",
+    "kind": "crash_point",
+    "plan": "step.after_start@publish:2",
+    "reached": "step.after_start publish#1",
+    "at": 1795187268.789582,
+    "held_runs": [
+     "chaos-0909"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w198",
+    "kind": "crash_point",
+    "plan": "step.after_commit@draft:1",
+    "reached": "step.after_commit draft#1",
+    "at": 1795187269.1723123,
+    "held_runs": [
+     "chaos-0914"
+    ],
+    "held_messages": []
+   },
+   {
+    "worker": "w187",
+    "kind": "unfired_plan",
+    "plan": "outbox.after_deliver:1",
+    "reached": null,
+    "at": 1795187270.9717755,
+    "held_runs": [],
+    "held_messages": []
+   },
+   {
+    "worker": "w191",
+    "kind": "unfired_plan",
+    "plan": "step.after_commit@draft:2",
+    "reached": null,
+    "at": 1795187272.4412131,
+    "held_runs": [],
+    "held_messages": []
+   }
+  ]
+ }
+}

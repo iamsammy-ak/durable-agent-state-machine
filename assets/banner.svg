@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="340" viewBox="0 0 1280 340" role="img" aria-labelledby="t d">
+  <title id="t">Durable Agent</title>
+  <desc id="d">Agent workflows that survive crashes, retries and human approvals.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#4338CA"/>
+      <stop offset="1" stop-color="#1E1B4B"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.82" cy="0.18" r="0.65">
+      <stop offset="0" stop-color="#fff" stop-opacity="0.30"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.3" fill="#fff" fill-opacity="0.11"/>
+    </pattern>
+    <clipPath id="frame"><rect width="1280" height="340" rx="28"/></clipPath>
+  </defs>
+  <g clip-path="url(#frame)">
+    <rect width="1280" height="340" fill="url(#bg)"/>
+    <rect width="1280" height="340" fill="url(#dots)"/>
+    <rect width="1280" height="340" fill="url(#glow)"/>
+    <g fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round">
+      <g stroke-width='3.5' stroke-opacity='0.9'><rect x='896' y='64' width='84' height='48' rx='13'/><rect x='1016' y='64' width='84' height='48' rx='13' fill='#fff' fill-opacity='0.16'/><rect x='1136' y='64' width='84' height='48' rx='13'/></g><g stroke-width='3' stroke-opacity='0.75'><line x1='982' y1='88' x2='1010' y2='88'/><path d='M1002 81 L1011 88 L1002 95'/><line x1='1102' y1='88' x2='1130' y2='88'/><path d='M1122 81 L1131 88 L1122 95'/></g><path d='M921 89 l9 9 l19 -20' stroke-width='5' stroke-opacity='0.95'/><g stroke-width='6' stroke-opacity='0.95'><line x1='1170' y1='76' x2='1170' y2='100'/><line x1='1186' y1='76' x2='1186' y2='100'/></g><path d='M1066 30 L1050 58 L1064 58 L1046 90' stroke-width='5' stroke-opacity='0.95' fill='none'/><g stroke-width='3.5' stroke-opacity='0.85'><ellipse cx='1058' cy='206' rx='74' ry='17'/><path d='M984 206 L984 262 A74 17 0 0 0 1132 262 L1132 206'/></g><g stroke-width='4' stroke-opacity='0.45'><line x1='1004' y1='232' x2='1112' y2='232'/><line x1='1004' y1='248' x2='1090' y2='248'/></g><line x1='1040' y1='118' x2='1040' y2='184' stroke-width='3' stroke-opacity='0.6' stroke-dasharray='6 6'/><path d='M1036 176 L1040 185 L1044 176' stroke-width='3' stroke-opacity='0.6'/><path d='M1078 186 C 1110 162, 1112 140, 1084 120' stroke-width='3.5' stroke-opacity='0.9' stroke-dasharray='7 6'/><path d='M1084 131 L1081 118 L1094 118' stroke-width='3.5' stroke-opacity='0.9'/>
+    </g>
+  </g>
+  <text x="64" y="138" font-family="'Segoe UI', Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="66" font-weight="800" fill="#fff" letter-spacing="-1.5">Durable Agent</text>
+  <text x="66" y="188" font-family="'Segoe UI', Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="23" fill="#fff" fill-opacity="0.9">Agent workflows that survive crashes, retries and human approvals.</text>
+  <rect x="66" y="236" width="139" height="34" rx="17" fill="#fff" fill-opacity="0.14" stroke="#fff" stroke-opacity="0.28"/><text x="136" y="258.5" text-anchor="middle" font-family="'Segoe UI', Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="15" font-weight="600" fill="#fff">Event journal</text>
+  <rect x="215" y="236" width="198" height="34" rx="17" fill="#fff" fill-opacity="0.14" stroke="#fff" stroke-opacity="0.28"/><text x="314" y="258.5" text-anchor="middle" font-family="'Segoe UI', Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="15" font-weight="600" fill="#fff">Checkpoints + replay</text>
+  <rect x="423" y="236" width="164" height="34" rx="17" fill="#fff" fill-opacity="0.14" stroke="#fff" stroke-opacity="0.28"/><text x="505" y="258.5" text-anchor="middle" font-family="'Segoe UI', Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="15" font-weight="600" fill="#fff">Leases &amp; fencing</text>
+  <rect x="598" y="236" width="148" height="34" rx="17" fill="#fff" fill-opacity="0.14" stroke="#fff" stroke-opacity="0.28"/><text x="671" y="258.5" text-anchor="middle" font-family="'Segoe UI', Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="15" font-weight="600" fill="#fff">Approval gates</text>
+  <rect x="755" y="236" width="80" height="34" rx="17" fill="#fff" fill-opacity="0.14" stroke="#fff" stroke-opacity="0.28"/><text x="795" y="258.5" text-anchor="middle" font-family="'Segoe UI', Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="15" font-weight="600" fill="#fff">Outbox</text>
+</svg>
